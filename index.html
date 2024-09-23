@@ -269,6 +269,13 @@
         }
       });
 
+      // Set default filter to "Research" on page load
+      $(document).ready(function() {
+          var defaultFilterValue = ".publication"; // Set to the class for Research
+          $grid.isotope({ filter: defaultFilterValue });
+          $('.button-group .button[data-filter="' + defaultFilterValue + '"]').addClass('is-checked');
+      });
+
       // Bind filter button click.
       $('#filters').on( 'click', 'button', function() {
         var filterValue = $( this ).attr('data-filter');
