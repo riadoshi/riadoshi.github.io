@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    
+    <link rel="icon" href="images/berk.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <!-- Google analytics tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-STGLQW4BJX');
+    </script>
+
+    <!-- Title -->
+    <title>Ria Doshi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1000">
+
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+  </head>
+
+  <body id="body">
+
+    <div id="main">
+      <div id="intro">
+        <div id="intro-text">
+          <h1>Ria Doshi</h1>
+          <p>
+            Hi! I’m a fourth-year undergraduate student at UC Berkeley studying computer science. My research focuses on building <b>generalist robot policies</b>, through cross-embodied data, vision-language pre-training, and autonomous policy learning. I’ve had the pleasure of working with <a href="https://people.eecs.berkeley.edu/~svlevine/">Professor Sergey Levine</a> and <a href="https://web.stanford.edu/~bohg/">Professor Jeannette Bohg</a> on the above. 
+            Aside from robot learning, I’ve done research in emergent phenomena of LLMs with Professor Anant Sahai. I’m also the author of The Code Detectives, a book series about young girls using AI to solve mysteries.             
+            <!-- <div id="more-bio" style="display: None">
+              <br>
+              <p>Andy Zeng is a Staff Research Scientist at <a href="https://research.google/teams/robotics/">Google DeepMind</a> , where he leads a small team working on self-improving Foundation models in robotics. He received his Bachelors in Computer Science and Mathematics at <a href="https://www.berkeley.edu/">UC Berkeley</a>, and his PhD in Computer Science at <a href="https://www.princeton.edu/">Princeton</a>. He is interested in building algorithms that enable machines to intelligently interact with the world and improve themselves over time. Andy received Best Paper Awards from HRI '24, CoRL '23, ICRA '23, T-RO '20, RSS'19, and has been finalist for paper awards at RSS '23, CoRL '20 - '22, ICRA '20, RSS '19, IROS '18. He led machine learning as part of Team MIT-Princeton, winning 1st place (stow task) at the worldwide Amazon Picking Challenge '17. Andy is a recipient of the Princeton SEAS Award for Excellence, Japan Foundation Paper Award, NVIDIA Fellowship, and Gordon Y.S. Wu Fellowship in Engineering and Wu Prize. His work has been featured in the press, including the New York Times, BBC, and Wired.</p>
+            </div> -->
+            <br>
+            <!-- <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/andyzeng">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <br>
+            <a href="mailto:riadoshi@berkeley.edu">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              Email
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://scholar.google.com/citations?user=c_jPvP4AAAAJ&hl=en&oi=sra">
+                <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                Google Scholar
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/riadoshi/">
+                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                LinkedIn
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://twitter.com/riadoshi21">
+                <span class="icon"><i class="fab fa-twitter"></i></span>
+                Twitter
+            </a>
+              <br><br>
+
+          </p>
+        </div>
+        <div id="intro-image">
+          <img src="images/headshot2.jpg">
+        </div>
+      </div>
+
+      <div id="filters" class="button-group">
+        <!-- <button class="button" data-filter="*">Show All</button> -->
+        <!-- <button class="button is-checked" data-filter=".highlight">Highlights</button> -->
+        <button class="button is-checked" data-filter=".publication">Research</button>
+        <button class="button" data-filter=".talk">Talks</button>
+        <!-- <button class="button" data-filter=".misc">Community</button> -->
+      </div>
+
+      <div class="grid">
+
+        <!-- Publications -->
+        <div class="list-item publication" data-category="publication">
+          <a href="https://crossformer-model.github.io/" class="thumbnail">
+            <video playsinline="" muted="" autoplay="" loop="" width="180px">
+              <source src="images/crossformer_teaser.mov" type="video/mp4">
+            </video>
+          </a>
+          <div class="project-description">
+            <h3><a href="https://crossformer-model.github.io">Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation
+            </a></h3>
+            <p>
+              <b style="color:black; font-weight: 350">Ria Doshi*</b>, Homer Walke*, Oier Mees, Sudeep Dasari, Sergey Levine<br>
+                <i><b style="color:red; font-weight:350">(Oral Presentation) </b>Conference on Robot Learning (CoRL) 2024</i><br>
+                <a href="https://crossformer-model.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                <a href="https://arxiv.org/pdf/2408.11812">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                <a href="https://github.com/rail-berkeley/crossformer">Code</a>
+                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <a href="https://shadow-cross-embodiment.github.io/" class="thumbnail">
+            <img src="images/shadow_teaser.png" type="png" style="width:140px">
+          </a>
+          <div class="project-description">
+            <h3><a href="https://shadow-cross-embodiment.github.io/">SHADOW: Leveraging Segmentation Masks for Cross-Embodiment Policy Transfer
+            </a></h3>
+            <p>
+              Marion Lepert,
+              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              Jeannette Bohg
+              <br>
+              <i>Conference on Robot Learning (CoRL) 2024</i><br>
+              <a href="https://shadow-cross-embodiment.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://openreview.net/pdf?id=MyyZZAPgpy">PDF</a>
+              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
+              <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <a href="https://sites.google.com/view/dexterous-avail/" class="thumbnail">
+            <video playsinline="" muted="" autoplay="" loop="" width="180px">
+              <source src="images/avail_teaser.mp4" type="video/mp4">
+            </video>
+          </a>
+          <div class="project-description">
+            <h3><a href="https://sites.google.com/view/dexterous-avail/">Dexterous Manipulation from Images: Autonomous Real-World RL via Substep Guidance
+            </a></h3>
+            <p>
+              Kelvin Xu*, Zheyuan Hu*,
+              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              Aaron Rovinsky, Abhishek Gupta, Vikash Kumar, Sergey Levine
+              <br>
+              <i>International Conference on Robotics & Automation (ICRA) 2022</i><br>
+              <a href="https://sites.google.com/view/dexterous-avail/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://arxiv.org/abs/2212.09902">PDF</a>
+              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
+              <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+
+        <div class="list-item publication" data-category="publication">
+          <a href=https://arxiv.org/pdf/2407.19346" class="thumbnail">
+            <img src="images/polyground_teaser.png" type="png" style="width:140px">
+          </a>
+          <div class="project-description">
+            <h3><a href="https://arxiv.org/pdf/2407.19346">PolyGround: Towards a Playground for Large Language Model Alignment & PEFT Using Polynomial Regression
+            </a></h3>
+            <p>
+              <b style="color:black; font-weight:400">Ria Doshi*</b>, Morten Svendgård*, Max Wilcoxson*, Dylan Davis*, Reya Vir, Anant Sahai<br>
+              <i>International Conference on Machine Learning (ICML) Workshop 2024</i><br>
+              <a href="https://riadoshi.github.io/polyground/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://arxiv.org/pdf/2407.19346">PDF</a>
+              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
+              <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <a href="https://octo-models.github.io/" class="thumbnail">
+            <img src="images/octo.gif" type="png" style="width:140px">
+          </a>
+          <div class="project-description">
+            <h3><a href="https://arxiv.org/pdf/2405.12213">Octo: An Open-Source Generalist Robot Policy
+            </a></h3>
+            <p>
+              Dibya Ghosh*, Homer Walke*, Karl Pertsch*, Kevin Black*, Oier Mees*, Sudeep Dasari, Joey Hejna, Tobias Kreiman,
+              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              Charles Xu, Jianlan Luo, You Liang Tan, Lawrence Yunliang Chen, Pannag Sanketi, Quan Vuong, Ted Xiao, Dorsa Sadigh, Chelsea Finn, Sergey Levine
+              <br>
+              <i>Robotics, Sciences & Systems (RSS) 2024</i><br>
+              <a href="https://arxiv.org/pdf/2405.12213">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://github.com/octo-models/octo">Code</a>
+              <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+        
+
+        <div class="list-item publication" data-category="publication">
+          <a href="https://robotics-transformer-x.github.io/" class="thumbnail">
+            <img src="images/rtx_thumbnail.gif" type="png" style="width:140px">
+          </a>
+          <div class="project-description">
+            <br>
+            <h3><a href="https://robotics-transformer-x.github.io/">Open X-Embodiment: Robotic Learning Datasets and RT-X Models
+            </a></h3>
+            <p>
+              Open X Embodiment Collaboration et. al. 
+              <br>
+              <i>International Conference on Robotics & Automation (ICRA) 2023</i><br>
+              <a href="https://robotics-transformer-x.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://robotics-transformer-x.github.io/paper.pdf">PDF</a>
+              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
+              <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+        
+
+        <!-- Talks -->
+        <!-- <div class="list-item talk description" data-category="talk">
+          Some of my slides can be found <a href="https://slides.com/andyzeng">here</a>
+        </div> -->
+
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2024</p>Invited Talk, Google DeepMind</a>
+        </div>
+
+        <div class="list-item talk" data-category="talk">
+          <p class="date"></p>Invited Talk, Wayve AI
+        </div>
+
+        <div class="list-item talk" data-category="talk">
+          <p class="date"></p>Oral Presentation, Conference on Robot Learning
+        </div>
+
+      
+
+        <!-- Services -->
+        <!-- <div class="list-item misc" data-category="misc">
+          <p class="date"></p>Member, IEEE
+        </div> -->
+
+      </div>
+
+      <br>
+      <div id="footer">Inspired by <a href="https://andyzeng.github.io/" target="_blank">Andy Zeng's</a> website.</div>
+      <br><br>
+    </div>
+
+    <script>
+
+      // Isotope grid.
+      var $grid = $('.grid').isotope({
+        itemSelector: '.list-item',
+        layoutMode: 'fitRows',
+        transitionDuration: 0,
+        stagger: 10,
+        initLayout: false,
+        getSortData: {
+          name: '.name',
+          symbol: '.symbol',
+          number: '.number parseInt',
+          category: '[data-category]',
+          weight: function( itemElem ) {
+            var weight = $( itemElem ).find('.weight').text();
+            return parseFloat( weight.replace( /[\(\)]/g, '') );
+          }
+        }
+      });
+
+      // Bind filter button click.
+      $('#filters').on( 'click', 'button', function() {
+        var filterValue = $( this ).attr('data-filter');
+        localStorage.setItem('filterValue', filterValue);
+        $grid.isotope({ filter: filterValue });
+      });
+
+      // Change is-checked class on buttons.
+      $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+
+      function update_isotope() {
+        // Retrieve cached button click.
+        var defaultFilterValue = localStorage.getItem('filterValue');
+        if (defaultFilterValue == null) {
+          defaultFilterValue = ".highlight"
+        }
+        $grid.isotope({ filter: defaultFilterValue });
+        var buttons = document.getElementsByClassName("button");
+        for (var currButton of buttons) {
+          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+            currButton.classList.add('is-checked');
+          } else {
+            currButton.classList.remove('is-checked');
+          }
+        }
+      }
+
+      function toggle_bio() {
+        var x = document.getElementById("more-bio");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function toggle_highlights() {
+        var x = document.getElementById("main-highlights");
+        var y = document.getElementById("more-highlights");
+        var b = document.getElementById("toggle_highlights_button")
+        if (y.style.display === "none") {
+          x.style.display = "none";
+          y.style.display = "block";
+          b.innerHTML = "Show less"
+          update_isotope();
+        } else {
+          x.style.display = "block";
+          y.style.display = "none";
+          b.innerHTML = "Show more"
+          update_isotope();
+        }
+      }
+
+      update_isotope();
+
+    </script>
+  </body>
+</html>

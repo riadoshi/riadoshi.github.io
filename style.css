@@ -1,0 +1,413 @@
+/* CSS Reset: http://meyerweb.com/eric/tools/css/reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+
+  overflow-x:hidden;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/**************************************************/
+
+#body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #150c21;
+  font-weight:300;
+}
+
+#main {
+  /* width: 54em;
+  margin: 0px auto;
+  position: relative;
+  min-height: 100vh;
+  padding: 0 2em; */
+
+  width: 100%; /* Use full width */
+  max-width: 58em; /* Set a maximum width */
+  margin: 0 auto; /* Center the main content */
+  position: relative;
+  min-height: 100vh;
+  padding: 0 2em; /* Add horizontal padding */
+
+}
+
+a {
+  text-decoration: none;
+  color: #2292ce;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #2292ce;
+}
+
+i {
+  font-style: italic;
+}
+
+b {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.7em;
+  line-height: 2em;
+  font-weight: 600;
+}
+
+/**************************************************/
+/* Profile image and description. */
+
+#intro {
+  padding-top: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom:2em;
+  
+}
+
+#intro-text {
+  width: 41em;
+  margin-right:1.5em;
+  font-size:1em;
+  color: #303a3e;
+  line-height:1.6em
+}
+
+#intro-image {
+
+  margin: 0em 0; /* Add margin for spacing */
+  padding-top: 1em; /* Add padding to move image down */
+  padding-left:0.5em;
+  width: 80%; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  flex: 1 1 12em; /* Allow the image to grow and shrink */
+}
+
+#intro-image img {
+  width: 13em;
+  border-radius: 50%; /* Make the image circular */
+}
+
+/**************************************************/
+/* Section buttons. */
+
+#menu {
+  display: flex;
+  /* font-family:"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif"; */
+}
+
+.menu-item {
+  float: left;
+  margin-right: 2em;
+  
+}
+
+h2 {
+  font-size: 1.6em;
+  line-height: 2.4em;
+  margin-top: 0.5em;
+  color: #a0a8b0;
+}
+
+.selected h2 {
+  color: #150c21;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #a0a8b0;
+  font-size: 1.4em;
+  line-height: 2.4em;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  float: left;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight:400;
+}
+
+.button:hover {
+  color: #150c21;
+}
+
+.button:active,
+.button.is-checked {
+  color: #150c21;
+}
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/**************************************************/
+/* Isotope grid list of items. */
+
+.grid {
+  padding-bottom: 6em;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.description {
+  margin-bottom: 1em;
+}
+
+.list-item {
+  width: 100%;
+  line-height: 1em;
+  margin-top: 1em;
+}
+
+.list-item p.date {
+  display: inline-block;
+  width: 3em;
+  color: #a0a8b0;
+}
+
+/**************************************************/
+/* Gallery of 3 preview videos. */
+
+.previews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  height: 12.5em;
+}
+
+.previews video {
+  border-radius: 5px;
+}
+
+.previews a:hover {
+  border: none;
+}
+
+.preview1 {
+  grid-column: 1;
+  width: 100%;
+}
+.preview2 {
+  grid-column: 2;
+  width: 100%;
+}
+.preview3 {
+  grid-column: 3;
+  width: 100%;
+}
+
+/**************************************************/
+/* Buttons for showing more or less highlights. */
+
+.toggle-button {
+  margin-top: 2em;
+}
+
+.toggle-button a {
+  color: #a0a8b0;
+}
+
+.toggle-button a:hover {
+  color: rgb(20, 110, 190);
+}
+
+/**************************************************/
+/* Publication details (thumbnail media, title, and description). */
+
+.thumbnail {
+/*  width: 21%;*/
+  width: 18%;
+  float: left;
+  margin-right: 2%;
+}
+
+.thumbnail:hover {
+  border-bottom: none;
+}
+
+.thumbnail img {
+  margin-top: 0.4em;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail video {
+  margin-top: 0.4em;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 400;
+}
+
+h3 a {
+  color: #150c21;
+}
+
+h3 a:hover {
+  color: rgb(20, 110, 190);
+}
+
+.publication {
+  margin-bottom: 0.5em;
+}
+
+.publication p {
+  font-size: 1em;
+  line-height: 1.5em;
+  /* color: #a0a8b0; */
+  color: #696969
+}
+
+.project-description {
+  width: 80%;
+  float: left;
+}
+
+/**************************************************/
+/* Subtle footer at the bottom of the page. */
+
+#footer {
+  color: #a0a8b0;
+  position: absolute;
+  bottom: 0;
+  line-height: 2.5em;
+}
+/* Add this at the end of your CSS file */
+@media (max-width: 900px) {
+  #main {
+      width: 90%; /* Adjust main width for smaller screens */
+  }
+
+  #intro {
+    flex-direction: column; /* Stack intro text and image */
+    align-items: center; /* Center align items */
+    text-align:center
+  }
+
+  #intro-image {
+      width: 80%; /* Adjust image width */
+      height: auto; /* Maintain aspect ratio */
+      order: -1; /* Ensure the image appears above the text */
+      display: flex; /* Use flex to center the image */
+      justify-content: center; /* Center the image horizontally */
+  }
+
+  #intro-text {
+      width: 100%; /* Full width for text */
+      text-align: center; /* Center text */
+      margin-right:0em
+  }
+
+  .grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+  }
+
+  .thumbnail {
+      width: 100%; /* Full width for thumbnails */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom:1em;
+      
+  }
+
+  .list-item {
+      margin-top: 0.5em; /* Reduce margin for list items */
+  }
+
+  .list-item {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: left; /* Center align items */
+    width: 100%; /* Ensure full width */
+    line-height: 1em;
+    margin-top: 1em;
+  }
+  
+  .list-item video {
+    
+    width: 180px; /* Set a fixed width for videos */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    /* display:block;
+    margin: 0 auto; */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+
+  h1 {
+      font-size: 1.8em; /* Smaller font size for headings */
+  }
+
+  h3 {
+      font-size: 0.9em; /* Smaller font size for subheadings */
+  }
+
+  #main {
+    width: 90%; /* Adjust main width for smaller screens */
+  }
+
+}
+
