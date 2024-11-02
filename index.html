@@ -42,6 +42,9 @@
 
     <div id="main">
       <div id="intro">
+        <div id="intro-image">
+          <img src="images/headshot22.JPG"">
+        </div>
         <div id="intro-text">
           <h1>Ria Doshi</h1>
           <p>
@@ -75,17 +78,17 @@
 
           </p>
         </div>
-        <div id="intro-image">
-          <img src="images/headshot21.png"">
-        </div>
+        
       </div>
 
       <div id="filters" class="button-group">
         <!-- <button class="button" data-filter="*">Show All</button> -->
         <!-- <button class="button is-checked" data-filter=".highlight">Highlights</button> -->
         <button class="button is-checked" data-filter=".publication">Research</button>
+        <button class="button" data-filter=".misc">Work</button>
+        <button class="button" data-filter=".community">Community</button>
         <button class="button" data-filter=".talk">Talks</button>
-        <!-- <button class="button" data-filter=".misc">Community</button> -->
+        
       </div>
 
       <div class="grid">
@@ -102,7 +105,7 @@
             </a></h3>
             <p>
               <b style="color:black; font-weight: 350">Ria Doshi*</b>, Homer Walke*, Oier Mees, Sudeep Dasari, Sergey Levine<br>
-                <i><b style="color:red; font-weight:350">(Oral Presentation) </b>Conference on Robot Learning (CoRL) 2024</i><br>
+                <i><b style="color:rgb(225, 26, 26); font-weight:350">(Oral Presentation) </b>Conference on Robot Learning (CoRL) 2024</i><br>
                 <a href="https://crossformer-model.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                 <a href="https://arxiv.org/pdf/2408.11812">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                 <a href="https://github.com/rail-berkeley/crossformer">Code</a>
@@ -116,7 +119,7 @@
             <img src="images/shadow_teaser.png" type="png" style="width:140px">
           </a>
           <div class="project-description">
-            <h3><a href="https://shadow-cross-embodiment.github.io/">SHADOW: Leveraging Segmentation Masks for Cross-Embodiment Policy Transfer
+            <h3><a href="https://shadow-cross-embodiment.github.io/">Shadow: Leveraging Segmentation Masks for Cross-Embodiment Policy Transfer
             </a></h3>
             <p>
               Marion Lepert,
@@ -125,7 +128,7 @@
               <br>
               <i>Conference on Robot Learning (CoRL) 2024</i><br>
               <a href="https://shadow-cross-embodiment.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-              <a href="https://openreview.net/pdf?id=MyyZZAPgpy">PDF</a>
+              <a href="https://shadow-cross-embodiment.github.io/static/shadow24.pdf">PDF</a>
               <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
               <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
@@ -214,6 +217,62 @@
             </p>
           </div>
         </div>
+
+        <!--Work-->
+        <div class="list-item misc" data-category="misc">
+          <a href="https://wayve.ai" class="thumbnail">
+            <img src="images/wayve.jpg" type="png" style="width:130px">
+          </a>
+
+          <div class="project-description">
+            <h3><a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">ML Research Intern, Wayve AI
+            </a></h3>
+            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
+            <p>
+              My work focused on building LINGO, towards a vision-language-action model for autonomous driving. I was involved with building a large-scale inference pipeline using Kubernetes, improving road-signal perception capabilities, and data curation for referential segmentation.<br>
+                <a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">Project Webpage</a>
+                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+          <a class="thumbnail">
+            <img src="images/spyne.jpg" type="png" style="width:100px">
+          </a>
+
+          <div class="project-description">
+            <h3><a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">ML Consultant, Spyne AI
+            </a></h3>
+            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
+            <p>
+              I developed high-fidelity, 3D renderings of cars using NERF models for smarter, more efficient online marketing. Implemented interpolation & feature matching techniques for output consistency across varying input dimensions. <br>
+            </p>
+          </div>
+        </div>
+
+
+        <!--Work-->
+        <div class="list-item community" data-category="community">
+          <div style="display: -ms-inline-flexbox">
+            <a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819" class="thumbnail">
+              <img src="images/books.png" type="png" style="width:170px">
+            </a>
+          </div>
+
+          <div class="project-description">
+            <h3><a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819">Author, The Code Detectives Book Series
+            </a></h3>
+            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
+            <p>
+              I've always been a big fan of mystery novels, especially when I was younger. I really enjoyed writing The Code Detectives, about two young girls who use coding & AI to solve neighborhood mysteries. Writing the books has been one of the most gratifying projects I've worked on. <br>
+                <a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819">Book 1</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                <a href="https://www.amazon.com/Code-Detectives-Student-Council-Sabotage/dp/B08H6NPW6Z">Book 2</a>
+                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+            </p>
+          </div>
+        </div>
+
 
         
 

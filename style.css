@@ -66,7 +66,7 @@ table {
   padding: 0 2em; */
 
   width: 100%; /* Use full width */
-  max-width: 58em; /* Set a maximum width */
+  max-width: 59em; /* Set a maximum width */
   margin: 0 auto; /* Center the main content */
   position: relative;
   min-height: 100vh;
@@ -106,30 +106,32 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   padding-bottom:2em;
+  flex-direction: row-reverse;
   
 }
 
 #intro-text {
-  width: 41em;
-  margin-right:1.5em;
+  width: 40em;
+  margin-right:1em;
   font-size:1em;
   color: #303a3e;
   line-height:1.6em
 }
 
 #intro-image {
-
+  
   margin: 0em 0; /* Add margin for spacing */
   padding-top: 1em; /* Add padding to move image down */
-  padding-left:0.5em;
   width: 80%; /* Adjust image width */
   height: auto; /* Maintain aspect ratio */
-  flex: 1 1 12em; /* Allow the image to grow and shrink */
+  flex: 1 1 11em; /* Allow the image to grow and shrink */
+  
 }
 
 #intro-image img {
-  width: 15em;
+  width: 14em;
   border-radius: 10%; /* Make the image circular */
+  /* transform: scaleX(-1); */
 }
 
 /**************************************************/
@@ -312,6 +314,30 @@ h3 a:hover {
 }
 
 .publication p {
+  font-size: 1em;
+  line-height: 1.5em;
+  /* color: #a0a8b0; */
+  color: #696969
+}
+
+.misc {
+  margin-bottom: 0.5em;
+  line-height: 1.75em
+}
+
+.misc p {
+  font-size: 1em;
+  line-height: 1.5em;
+  /* color: #a0a8b0; */
+  color: #696969
+}
+
+.community {
+  margin-bottom: 0.5em;
+  line-height: 1.75em
+}
+
+.community p {
   font-size: 1em;
   line-height: 1.5em;
   /* color: #a0a8b0; */
