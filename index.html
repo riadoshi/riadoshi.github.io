@@ -86,8 +86,8 @@
         <!-- <button class="button is-checked" data-filter=".highlight">Highlights</button> -->
         <button class="button is-checked" data-filter=".publication">Research</button>
         <button class="button" data-filter=".misc">Work</button>
-        <button class="button" data-filter=".community">Books</button>
         <button class="button" data-filter=".talk">Talks</button>
+        <button class="button" data-filter=".community">Books</button>
         
       </div>
 
@@ -335,8 +335,10 @@
       $(document).ready(function() {
           var defaultFilterValue = ".publication"; // Set to the class for Research
           $grid.isotope({ filter: defaultFilterValue });
-          $('.button-group .button[data-filter="' + defaultFilterValue + '"]').addClass('is-checked');
-      });
+          $('.button-group .button').removeClass('is-checked');
+    
+          // Select only the Research button
+          $('.button-group .button[data-filter="' + defaultFilterValue + '"]').addClass('is-checked');      });
 
       // Bind filter button click.
       $('#filters').on( 'click', 'button', function() {
