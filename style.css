@@ -289,14 +289,14 @@ h2 {
 }
 
 .thumbnail video {
-  /* margin-top: 0.4em; */
+  margin-top: 0.4em;
   border-radius: 5px;
   width: 100%;
   height: 100%;
 }
 
 h3 {
-  font-size: 1.05em;
+  font-size:1.2em;
   line-height: 1.5em;
   font-weight: 400;
 }
