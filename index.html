@@ -14,6 +14,26 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-STGLQW4BJX');
+
+      $(document).ready(function() {
+        // Check if the URL contains '#talks'
+        if (window.location.hash === "#talks") {
+          // Switch to the "Talks" tab
+          $grid.isotope({ filter: ".talk" });
+          $('.button-group .button').removeClass('is-checked');
+          $('.button-group .button[data-filter=".talk"]').addClass('is-checked');
+
+          // Find the iframe for the YouTube video and play it
+          var iframe = document.querySelector('.list-item.talk iframe');
+          if (iframe) {
+            var videoSrc = iframe.src;
+            if (!videoSrc.includes("autoplay=1")) {
+              iframe.src = videoSrc + "&autoplay=1";
+            }
+          }
+        }
+      });
+
     </script>
 
     <!-- Title -->
