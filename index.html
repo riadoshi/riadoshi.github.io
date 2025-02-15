@@ -373,7 +373,6 @@
         }
       }
 
-      // Add this code right after the existing update_isotope() function
       window.addEventListener('load', function() {
         if (window.location.hash === '#talks') {
             // Switch to talks tab
@@ -387,18 +386,14 @@
                 var videoIframe = document.querySelector('iframe[src*="youtube.com"]');
                 if (videoIframe) {
                     var currentSrc = videoIframe.src;
-                    // Add enablejsapi=1 to allow JavaScript control
-                    if (!currentSrc.includes('enablejsapi=1')) {
-                        videoIframe.src = currentSrc + '&enablejsapi=1';
-                        // Once the iframe reloads with the API enabled, play the video
-                        videoIframe.onload = function() {
-                            videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                        };
+                    // Add both autoplay and mute parameters
+                    if (!currentSrc.includes('autoplay=1')) {
+                        videoIframe.src = currentSrc + '&autoplay=1&mute=1';
                     }
                 }
             }, 1000);
         }
-        });
+      });
 
       function toggle_bio() {
         var x = document.getElementById("more-bio");
