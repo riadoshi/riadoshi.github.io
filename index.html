@@ -375,26 +375,30 @@
 
       // Add this code right after the existing update_isotope() function
       window.addEventListener('load', function() {
-          if (window.location.hash === '#talks') {
-              // Switch to talks tab
-              var filterValue = '.talk';
-              $grid.isotope({ filter: filterValue });
-              $('.button-group .button').removeClass('is-checked');
-              $('.button-group .button[data-filter="' + filterValue + '"]').addClass('is-checked');
-              
-              // Find and play YouTube video if it exists
-              setTimeout(function() {
-                  var videoIframe = document.querySelector('iframe[src*="youtube.com"]');
-                  if (videoIframe) {
-                      // Ensure autoplay is enabled in the URL
-                      var currentSrc = videoIframe.src;
-                      if (!currentSrc.includes('autoplay=1')) {
-                          videoIframe.src = currentSrc + '&autoplay=1';
-                      }
-                  }
-              }, 1000); // Small delay to ensure the tab switch is complete
-          }
-      });
+        if (window.location.hash === '#talks') {
+            // Switch to talks tab
+            var filterValue = '.talk';
+            $grid.isotope({ filter: filterValue });
+            $('.button-group .button').removeClass('is-checked');
+            $('.button-group .button[data-filter="' + filterValue + '"]').addClass('is-checked');
+            
+            // Find and play YouTube video if it exists
+            setTimeout(function() {
+                var videoIframe = document.querySelector('iframe[src*="youtube.com"]');
+                if (videoIframe) {
+                    var currentSrc = videoIframe.src;
+                    // Add enablejsapi=1 to allow JavaScript control
+                    if (!currentSrc.includes('enablejsapi=1')) {
+                        videoIframe.src = currentSrc + '&enablejsapi=1';
+                        // Once the iframe reloads with the API enabled, play the video
+                        videoIframe.onload = function() {
+                            videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                        };
+                    }
+                }
+            }, 1000);
+        }
+        });
 
       function toggle_bio() {
         var x = document.getElementById("more-bio");
