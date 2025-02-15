@@ -7,33 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&display=swap" rel="stylesheet">
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYK3VQSFF7"></script>
+    <!-- Google analytics tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-STGLQW4BJX');
-
-      $(document).ready(function() {
-        // Check if the URL contains '#talks'
-        if (window.location.hash === "#talks") {
-          // Switch to the "Talks" tab
-          $grid.isotope({ filter: ".talk" });
-          $('.button-group .button').removeClass('is-checked');
-          $('.button-group .button[data-filter=".talk"]').addClass('is-checked');
-
-          // Find the iframe for the YouTube video and play it
-          var iframe = document.querySelector('.list-item.talk iframe');
-          if (iframe) {
-            var videoSrc = iframe.src;
-            if (!videoSrc.includes("autoplay=1")) {
-              iframe.src = videoSrc + "&autoplay=1";
-            }
-          }
-        }
-      });
-
     </script>
 
     <!-- Title -->
@@ -392,6 +372,29 @@
           }
         }
       }
+
+      // Add this code right after the existing update_isotope() function
+      window.addEventListener('load', function() {
+          if (window.location.hash === '#talks') {
+              // Switch to talks tab
+              var filterValue = '.talk';
+              $grid.isotope({ filter: filterValue });
+              $('.button-group .button').removeClass('is-checked');
+              $('.button-group .button[data-filter="' + filterValue + '"]').addClass('is-checked');
+              
+              // Find and play YouTube video if it exists
+              setTimeout(function() {
+                  var videoIframe = document.querySelector('iframe[src*="youtube.com"]');
+                  if (videoIframe) {
+                      // Ensure autoplay is enabled in the URL
+                      var currentSrc = videoIframe.src;
+                      if (!currentSrc.includes('autoplay=1')) {
+                          videoIframe.src = currentSrc + '&autoplay=1';
+                      }
+                  }
+              }, 1000); // Small delay to ensure the tab switch is complete
+          }
+      });
 
       function toggle_bio() {
         var x = document.getElementById("more-bio");
