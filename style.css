@@ -25,11 +25,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+/**************************************************/
+
+/* Add very subtle beige background to body */
 body {
   line-height: 1;
-
-  overflow-x:hidden;
+  overflow-x: hidden;
+  background-color: #fefdfb; /* Very subtle beige background */
 }
+
 ol, ul {
   list-style: none;
 }
@@ -46,16 +51,13 @@ table {
   border-spacing: 0;
 }
 
-
-
-/**************************************************/
-
 #body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1em;
+  font-family: "Georgia", "Times New Roman", serif; /* More research-oriented serif font */
+  font-size: 1em; /* Increased back to 1em from 0.9em */
   line-height: 1.5em;
-  color: #150c21;
+  color: #1a1a1a; /* Dark black for main text */
   font-weight:300;
+  background-color: #fefdfb; /* Very subtle beige background */
 }
 
 #main {
@@ -71,17 +73,19 @@ table {
   position: relative;
   min-height: 100vh;
   padding: 0 2em; /* Add horizontal padding */
-
+  background-color: #fefdfb; /* Very subtle beige background */
 }
 
 a {
   text-decoration: none;
-  color: #2292ce;
+  color: #3a9aaa; /* Slightly darker teal-blue for links */
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: none;
-  border-bottom: 1px solid #2292ce;
+  border-bottom: 1px solid #3a9aaa;
+  color: #2d7a85; /* Even darker teal on hover */
 }
 
 i {
@@ -90,38 +94,40 @@ i {
 
 b {
   font-weight: 500;
+  color: #1a1a1a; /* Ensure bold text is black */
 }
 
 h1 {
-  font-size: 2.7em;
-  line-height: 2em;
+  font-size: 2.5em; /* Slightly increased from 2.4em */
+  line-height: 1.7em; /* Slightly increased from 1.6em */
   font-weight: 450;
+  color: #1a1a1a; /* Black for main heading */
 }
 
 /**************************************************/
 /* Profile image and description. */
 
 #intro {
-  padding-top: 5em;
+  padding-top: 4em; /* Increased from 3em */
   display: flex;
   flex-wrap: wrap;
-  padding-bottom:2em;
-  flex-direction: row-reverse;
+  padding-bottom:2em; /* Increased from 1em */
+  flex-direction: row; /* Changed from row-reverse to put image on left */
   
 }
 
 #intro-text {
   width: 40em;
-  margin-right:1em;
+  margin-left:1em; /* Changed from margin-right to margin-left */
   font-size:1em;
-  color: #303a3e;
-  line-height:1.5em
+  color: #374151; /* Dark gray for intro text */
+  line-height:1.45em; /* Slightly increased from 1.4em */
 }
 
 #intro-image {
   
   margin: 0em 0; /* Add margin for spacing */
-  padding-top: 1em; /* Add padding to move image down */
+  padding-top: 0.8em; /* Slightly increased from 0.5em */
   width: 80%; /* Adjust image width */
   height: auto; /* Maintain aspect ratio */
   flex: 1 1 11em; /* Allow the image to grow and shrink */
@@ -129,8 +135,9 @@ h1 {
 }
 
 #intro-image img {
-  width: 14em;
-  border-radius: 10%; /* Make the image circular */
+  width: 13em; /* Slightly increased from 12em */
+  border-radius: 50%; /* Make the image circular */
+  /* Removed border for cleaner look */
   /* transform: scaleX(-1); */
 }
 
@@ -149,14 +156,22 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.4em; /* Increased from 1.3em */
   line-height: 2.4em;
   margin-top: 0.5em;
-  color: #a0a8b0;
+  color: #6b7280; /* Medium gray for inactive headings */
 }
 
 .selected h2 {
-  color: #150c21;
+  color: #1a1a1a; /* Black for selected headings */
+}
+
+/* Position buttons right under intro */
+#filters {
+  text-align: center;
+  padding: 2em 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2em;
 }
 
 .button {
@@ -164,24 +179,40 @@ h2 {
   cursor: pointer;
   border: none;
   background: none;
-  color: #a0a8b0;
-  font-size: 1.4em;
+  color: #6b7280; /* Medium gray for inactive buttons */
+  font-size: 1.3em; /* Increased from 1.2em */
   line-height: 2.4em;
   margin-top: 0.5em;
-  margin-right: 1em;
-  float: left;
+  margin-right: 1.5em; /* Increased spacing */
+  float: none; /* Remove float for centered layout */
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Georgia", "Times New Roman", serif; /* More research-oriented serif font */
   font-weight:400;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  color: #150c21;
+  color: #3a9aaa; /* Darker teal-blue on hover */
+  transform: translateY(-1px); /* Subtle lift effect */
+  transition: all 0.3s ease;
 }
 
 .button:active,
 .button.is-checked {
-  color: #150c21;
+  color: #1a1a1a; /* Black for active/checked buttons */
+  font-weight: 500;
+  position: relative;
+}
+
+.button.is-checked::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3a9aaa;
+  border-radius: 1px;
 }
 
 .button-group:after {
@@ -193,8 +224,26 @@ h2 {
 /**************************************************/
 /* Isotope grid list of items. */
 
+/* Hide content initially */
 .grid {
   padding-bottom: 6em;
+  display: none; /* Hidden by default */
+}
+
+.grid.show {
+  display: block;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* clear fix */
@@ -206,18 +255,29 @@ h2 {
 
 .description {
   margin-bottom: 1em;
+  color: #374151; /* Dark gray for descriptions */
 }
 
 .list-item {
   width: 100%;
   line-height: 1em;
   margin-top: 1em;
+  transition: transform 0.2s ease;
+}
+
+.list-item:hover {
+  transform: translateX(5px); /* Subtle slide on hover */
 }
 
 .list-item p.date {
   display: inline-block;
   width: 3em;
-  color: #a0a8b0;
+  color: #3a9aaa; /* Darker teal-blue for dates */
+  font-weight: 500;
+  background: rgba(58, 154, 170, 0.1); /* Updated background with darker color */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
 }
 
 /**************************************************/
@@ -233,6 +293,7 @@ h2 {
 
 .previews video {
   border-radius: 5px;
+  border: 2px solid #e5e7eb; /* Light gray border */
 }
 
 .previews a:hover {
@@ -260,11 +321,11 @@ h2 {
 }
 
 .toggle-button a {
-  color: #a0a8b0;
+  color: #6b7280; /* Medium gray for toggle buttons */
 }
 
 .toggle-button a:hover {
-  color: rgb(20, 110, 190);
+  color: #3a9aaa; /* Darker teal-blue on hover */
 }
 
 /**************************************************/
@@ -275,10 +336,12 @@ h2 {
   width: 18%;
   float: left;
   margin-right: 2%;
+  transition: transform 0.3s ease;
 }
 
 .thumbnail:hover {
   border-bottom: none;
+  transform: translateY(-2px); /* Subtle lift on hover */
 }
 
 .thumbnail img {
@@ -286,6 +349,12 @@ h2 {
   border-radius: 5px;
   width: 100%;
   height: 100%;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  transition: box-shadow 0.3s ease;
+}
+
+.thumbnail:hover img {
+  box-shadow: 0 4px 12px rgba(58, 154, 170, 0.15); /* Updated shadow with darker color */
 }
 
 .thumbnail video {
@@ -293,20 +362,26 @@ h2 {
   border-radius: 5px;
   width: 100%;
   height: 100%;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  transition: box-shadow 0.3s ease;
+}
+
+.thumbnail:hover video {
+  box-shadow: 0 4px 12px rgba(58, 154, 170, 0.15); /* Updated shadow with darker color */
 }
 
 h3 {
-  font-size:1.2em;
+  font-size:1.15em; /* Increased from 1.1em */
   line-height: 1.5em;
   font-weight: 400;
 }
 
 h3 a {
-  color: #150c21;
+  color: #1a1a1a; /* Black for publication titles */
 }
 
 h3 a:hover {
-  color: rgb(20, 110, 190);
+  color: #3a9aaa; /* Darker teal-blue on hover */
 }
 
 .publication {
@@ -315,10 +390,9 @@ h3 a:hover {
 }
 
 .publication p {
-  font-size: 1em;
+  font-size: 0.95em; /* Increased from 0.9em */
   line-height: 1.5em;
-  /* color: #a0a8b0; */
-  color: #696969
+  color: #6b7280; /* Medium gray for publication details */
 }
 
 .misc {
@@ -327,10 +401,9 @@ h3 a:hover {
 }
 
 .misc p {
-  font-size: 1em;
+  font-size: 0.95em; /* Increased from 0.9em */
   line-height: 1.5em;
-  /* color: #a0a8b0; */
-  color: #696969
+  color: #6b7280; /* Medium gray for misc details */
 }
 
 .community {
@@ -339,14 +412,13 @@ h3 a:hover {
 }
 
 .community p {
-  font-size: 1em;
+  font-size: 0.95em; /* Increased from 0.9em */
   line-height: 1.5em;
-  /* color: #a0a8b0; */
-  color: #696969
+  color: #6b7280; /* Medium gray for community details */
 }
 
 .project-description {
-  width: 80%;
+  width: 80%; /* Back to original 80% */
   float: left;
 }
 
@@ -354,11 +426,21 @@ h3 a:hover {
 /* Subtle footer at the bottom of the page. */
 
 #footer {
-  color: #a0a8b0;
+  color: #6b7280; /* Medium gray for footer */
   position: absolute;
   bottom: 0;
   line-height: 2.5em;
 }
+
+#footer a {
+  color: #6b7280; /* Medium gray for footer links */
+}
+
+#footer a:hover {
+  color: #3a9aaa; /* Darker teal-blue on hover */
+}
+
+/**************************************************/
 /* Add this at the end of your CSS file */
 @media (max-width: 900px) {
   #main {
@@ -437,4 +519,6 @@ h3 a:hover {
   }
 
 }
+
+/* Remove the subtle accent from the intro section */
 
