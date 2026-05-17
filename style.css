@@ -52,7 +52,7 @@ table {
 }
 
 #body{
-  font-family: "Georgia", "Times New Roman", serif; /* More research-oriented serif font */
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1em; /* Increased back to 1em from 0.9em */
   line-height: 1.5em;
   color: #1a1a1a; /* Dark black for main text */
@@ -100,45 +100,91 @@ b {
 h1 {
   font-size: 2.5em; /* Slightly increased from 2.4em */
   line-height: 1.7em; /* Slightly increased from 1.6em */
-  font-weight: 450;
+  font-weight: 600;
   color: #1a1a1a; /* Black for main heading */
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+  margin-bottom: 0;
+}
+
+.intro-subtitle {
+  font-size: 1.05em;
+  color: #6b7280;
+  margin: -0.35em 0 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.intro-socials {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.9em;
+  margin-top: 0.15em;
+}
+
+.intro-socials a {
+  color: #6b7280;
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.intro-socials a:hover {
+  color: #3a9aaa;
+  border-bottom: none;
+}
+
+.intro-bio > p {
+  margin-bottom: 0.85em;
+}
+
+.intro-bio > p:last-child {
+  margin-bottom: 0;
 }
 
 /**************************************************/
 /* Profile image and description. */
 
 #intro {
-  padding-top: 4em; /* Increased from 3em */
+  padding-top: 3.25em;
+  padding-bottom: 1.75em;
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom:2em; /* Increased from 1em */
-  flex-direction: row; /* Changed from row-reverse to put image on left */
-  
+  flex-direction: column;
+  gap: 1.25em;
 }
 
-#intro-text {
-  width: 40em;
-  margin-left:1em; /* Changed from margin-right to margin-left */
-  font-size:1em;
-  color: #374151; /* Dark gray for intro text */
-  line-height:1.45em; /* Slightly increased from 1.4em */
+.intro-top {
+  display: flex;
+  align-items: center;
+  gap: 2.25em;
+}
+
+.intro-identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.intro-bio {
+  width: 100%;
+  font-size: 1em;
+  color: #374151;
+  line-height: 1.5em;
 }
 
 #intro-image {
-  
-  margin: 0em 0; /* Add margin for spacing */
-  padding-top: 0.8em; /* Slightly increased from 0.5em */
-  width: 80%; /* Adjust image width */
-  height: auto; /* Maintain aspect ratio */
-  flex: 1 1 11em; /* Allow the image to grow and shrink */
-  
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0;
 }
 
 #intro-image img {
-  width: 13em; /* Slightly increased from 12em */
-  border-radius: 50%; /* Make the image circular */
-  /* Removed border for cleaner look */
-  /* transform: scaleX(-1); */
+  width: 8.5em;
+  border-radius: 50%;
 }
 
 /**************************************************/
@@ -168,10 +214,11 @@ h2 {
 
 /* Position buttons right under intro */
 #filters {
-  text-align: center;
-  padding: 2em 0;
+  text-align: left;
+  padding: 0.75em 0 0.8em;
+  margin-top: 0.85em;
   border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
 
 .button {
@@ -180,39 +227,25 @@ h2 {
   border: none;
   background: none;
   color: #6b7280; /* Medium gray for inactive buttons */
-  font-size: 1.3em; /* Increased from 1.2em */
-  line-height: 2.4em;
-  margin-top: 0.5em;
-  margin-right: 1.5em; /* Increased spacing */
+  font-size: 1.22em;
+  line-height: 1.35;
+  margin: 0 1.1em 0 0;
   float: none; /* Remove float for centered layout */
-  padding: 0;
-  font-family: "Georgia", "Times New Roman", serif; /* More research-oriented serif font */
-  font-weight:400;
-  transition: all 0.3s ease;
+  padding: 0 0 0.2em;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  transition: color 0.2s ease;
 }
 
 .button:hover {
   color: #3a9aaa; /* Darker teal-blue on hover */
-  transform: translateY(-1px); /* Subtle lift effect */
-  transition: all 0.3s ease;
 }
 
 .button:active,
 .button.is-checked {
   color: #1a1a1a; /* Black for active/checked buttons */
   font-weight: 500;
-  position: relative;
-}
-
-.button.is-checked::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #3a9aaa;
-  border-radius: 1px;
+  box-shadow: inset 0 -2px 0 #3a9aaa;
 }
 
 .button-group:after {
@@ -226,7 +259,7 @@ h2 {
 
 /* Hide content initially */
 .grid {
-  padding-bottom: 6em;
+  padding-bottom: 0.5em;
   display: none; /* Hidden by default */
 }
 
@@ -260,9 +293,49 @@ h2 {
 
 .list-item {
   width: 100%;
-  line-height: 1em;
-  margin-top: 1em;
+  line-height: 1.5em;
+  margin-top: 0;
   transition: transform 0.2s ease;
+}
+
+.list-item.publication {
+  display: flex;
+  align-items: flex-start;
+  gap: 2%;
+  margin-bottom: 1.5em;
+}
+
+.list-item.publication:has(+ .list-item.misc) {
+  margin-bottom: 0;
+}
+
+.list-item.publication .thumbnail {
+  float: none;
+  flex: 0 0 18%;
+  width: 18%;
+  margin-right: 0;
+}
+
+.list-item.publication .project-description {
+  float: none;
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
+.list-item.publication .thumbnail img,
+.list-item.publication .thumbnail video {
+  max-height: 120px;
+  object-fit: cover;
+}
+
+.list-item.publication .project-description h3 {
+  margin-top: 0;
+}
+
+.list-item.publication .project-description p {
+  margin-top: 0.4em;
+  margin-bottom: 0;
 }
 
 .list-item:hover {
@@ -278,6 +351,30 @@ h2 {
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.9em;
+}
+
+.list-item.talk h3 {
+  display: inline-block;
+  width: calc(100% - 4.5em);
+  vertical-align: top;
+  margin: 0;
+  font-weight: 500;
+}
+
+.list-item.talk .talk-venue {
+  margin: 0.2em 0 0.6em 3.6em;
+  color: #6b7280;
+  font-size: 0.95em;
+  line-height: 1.5em;
+}
+
+.list-item.talk.talk-intro p {
+  color: #6b7280;
+  line-height: 1.55em;
+}
+
+.list-item.talk iframe {
+  margin: 0.5em 0 0 3.6em;
 }
 
 /**************************************************/
@@ -344,26 +441,18 @@ h2 {
   transform: translateY(-2px); /* Subtle lift on hover */
 }
 
-.thumbnail img {
-  /* margin-top: 0.1em; */
+.thumbnail img,
+.thumbnail video {
+  display: block;
   border-radius: 5px;
   width: 100%;
-  height: 100%;
+  height: auto;
   border: 1px solid #e5e7eb; /* Light gray border */
   transition: box-shadow 0.3s ease;
 }
 
 .thumbnail:hover img {
   box-shadow: 0 4px 12px rgba(58, 154, 170, 0.15); /* Updated shadow with darker color */
-}
-
-.thumbnail video {
-  margin-top: 0.4em;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #e5e7eb; /* Light gray border */
-  transition: box-shadow 0.3s ease;
 }
 
 .thumbnail:hover video {
@@ -382,11 +471,6 @@ h3 a {
 
 h3 a:hover {
   color: #3a9aaa; /* Darker teal-blue on hover */
-}
-
-.publication {
-  /* padding-top:10px; */
-  margin-bottom: 1em;
 }
 
 .publication p {
@@ -426,18 +510,20 @@ h3 a:hover {
 /* Subtle footer at the bottom of the page. */
 
 #footer {
-  color: #6b7280; /* Medium gray for footer */
-  position: absolute;
-  bottom: 0;
-  line-height: 2.5em;
+  color: #6b7280;
+  text-align: left;
+  margin-top: 1.5em;
+  padding: 1.5em 0 2.5em;
+  line-height: 1.5em;
 }
 
 #footer a {
-  color: #6b7280; /* Medium gray for footer links */
+  color: #6b7280;
 }
 
 #footer a:hover {
-  color: #3a9aaa; /* Darker teal-blue on hover */
+  color: #3a9aaa;
+  border-bottom: none;
 }
 
 /**************************************************/
@@ -447,24 +533,30 @@ h3 a:hover {
       width: 90%; /* Adjust main width for smaller screens */
   }
 
-  #intro {
-    flex-direction: column; /* Stack intro text and image */
-    align-items: center; /* Center align items */
-    text-align:center
+  .intro-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   #intro-image {
-      width: 80%; /* Adjust image width */
-      height: auto; /* Maintain aspect ratio */
-      order: -1; /* Ensure the image appears above the text */
-      display: flex; /* Use flex to center the image */
-      justify-content: center; /* Center the image horizontally */
+      order: -1;
+      display: flex;
+      justify-content: center;
   }
 
-  #intro-text {
-      width: 100%; /* Full width for text */
-      text-align: center; /* Center text */
-      margin-right:0em
+  .intro-identity {
+      width: 100%;
+  }
+
+  .intro-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75em;
+  }
+
+  .intro-socials {
+      margin-top: 0;
   }
 
   .grid {
