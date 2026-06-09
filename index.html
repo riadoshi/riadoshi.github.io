@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    
+
     <link rel="icon" href="images/berk.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Google analytics tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
     <script>
@@ -18,75 +18,90 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1000">
 
-    <!-- Isotope JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
     <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
 
-  <body id="body">
+  <body id="body" class="is-home">
 
     <div id="main">
-      <div id="intro">
-        <div class="intro-top">
-          <div id="intro-image">
-            <img src="images/headshot_website.jpg" alt="Ria Doshi">
-          </div>
-          <div class="intro-identity">
-            <div class="intro-header">
-            <div>
-              <h1>Ria Doshi</h1>
-              <p class="intro-subtitle">PhD @ Stanford · AI/Robotics</p>
+
+      <!-- Persistent top navigation -->
+      <nav id="topnav">
+        <a href="#home" class="nav-name">Ria Doshi</a>
+        <div class="nav-links">
+          <a href="#publications">Publications</a>
+          <a href="#blog">Blog</a>
+          <a href="#talks">Talks</a>
+          <a href="#work">Work</a>
+          <a href="#more">More</a>
+        </div>
+      </nav>
+
+      <!-- ===================== HOME ===================== -->
+      <section id="view-home" class="view active">
+        <div id="intro">
+          <div class="intro-top">
+            <div id="intro-image">
+              <img src="images/headshot_website.jpg" alt="Ria Doshi">
             </div>
-            <div class="intro-socials">
-              <a href="mailto:riadoshi@stanford.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-              <a href="https://scholar.google.com/citations?user=c_jPvP4AAAAJ&hl=en&oi=sra" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-              <a href="https://www.linkedin.com/in/riadoshi/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://twitter.com/riadoshi21" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <div class="intro-identity">
+              <div class="intro-header">
+                <div>
+                  <h1>Ria Doshi</h1>
+                  <p class="intro-subtitle">PhD @ Stanford · AI/Robotics</p>
+                </div>
+                <div class="intro-socials">
+                  <a href="https://twitter.com/riadoshi21" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                  <a href="mailto:riadoshi@stanford.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  <a href="https://scholar.google.com/citations?user=c_jPvP4AAAAJ&hl=en&oi=sra" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                  <a href="https://www.linkedin.com/in/riadoshi/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="intro-bio">
+            <p>
+              I'm a CS PhD student at <a href="https://www.stanford.edu/">Stanford University</a>, grateful to be advised by <a href="https://web.stanford.edu/~bohg/">Jeannette Bohg</a>.
+              My research focuses on building <b>generalist, embodied intelligence</b>.
+              I completed my undergrad at <a href="https://www.berkeley.edu/">UC Berkeley</a>, where I was fortunate to be advised by <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>. I also spent a lovely summer working on autonomous driving models at <a href="https://wayve.ai/">Wayve AI</a>.
+              My research is supported by the NDSEG Fellowship and the Stanford Graduate Fellowship.
+            </p>
+            <p>
+              I'm always happy to chat about research or otherwise — feel free to reach out and <a href="mailto:riadoshi@stanford.edu">say hi!</a>
+            </p>
+          </div>
+
+          <div class="pins">
+            <a class="pin" href="#blog">
+              <span class="pin-label"><i class="fas fa-pen-nib"></i> Latest blog post</span>
+              <span class="pin-title">On healthcare and robotics</span>
+              <span class="pin-meta"><span class="pin-date">Apr 26, 2026</span> · read ▸</span>
+            </a>
+            <a class="pin" href="#talks">
+              <span class="pin-label"><i class="fas fa-microphone-lines"></i> Talk</span>
+              <span class="pin-title">Oral presentation — Scaling Cross-Embodied Learning</span>
+              <span class="pin-meta"><span class="pin-date">Nov 2024</span> · CoRL · watch ▸</span>
+            </a>
+            <a class="pin" href="https://crossformer-model.github.io/">
+              <span class="pin-label"><i class="fas fa-file-lines"></i> Latest paper</span>
+              <span class="pin-title">CrossFormer: One Policy for Manipulation, Navigation, Locomotion &amp; Aviation</span>
+              <span class="pin-meta"><span class="pin-date">Aug 2024</span> · Oral, CoRL</span>
+            </a>
           </div>
         </div>
-        <div class="intro-bio">
-          <p>
-            I'm a CS PhD student at <a href="https://www.stanford.edu/">Stanford</a>, advised by <a href="https://web.stanford.edu/~bohg/">Jeannette Bohg</a>.
-            My research focuses on <b>generalist agents</b> that interact with and reason about the physical world. 
-            Previously, I completed my undergrad at <a href="https://www.berkeley.edu/">UC Berkeley</a> advised by <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>, and worked on autonomous driving at <a href="https://wayve.ai/">Wayve AI</a>.
-            My research is supported by the NDSEG Fellowship and the Stanford Graduate Fellowship.
-          </p>
-          <p>
-            <b> Contact: </b> I consult for companies working on robotics + AI and give talks related to these topics. I'm also always happy to chat about robot learning. Feel free to reach out and <a href="mailto:riadoshi@stanford.edu">say hi!</a>
-          </p>
-            <!-- <div id="more-bio" style="display: None">
-              <br>
-              <p>Andy Zeng is a Staff Research Scientist at <a href="https://research.google/teams/robotics/">Google DeepMind</a> , where he leads a small team working on self-improving Foundation models in robotics. He received his Bachelors in Computer Science and Mathematics at <a href="https://www.berkeley.edu/">UC Berkeley</a>, and his PhD in Computer Science at <a href="https://www.princeton.edu/">Princeton</a>. He is interested in building algorithms that enable machines to intelligently interact with the world and improve themselves over time. Andy received Best Paper Awards from HRI '24, CoRL '23, ICRA '23, T-RO '20, RSS'19, and has been finalist for paper awards at RSS '23, CoRL '20 - '22, ICRA '20, RSS '19, IROS '18. He led machine learning as part of Team MIT-Princeton, winning 1st place (stow task) at the worldwide Amazon Picking Challenge '17. Andy is a recipient of the Princeton SEAS Award for Excellence, Japan Foundation Paper Award, NVIDIA Fellowship, and Gordon Y.S. Wu Fellowship in Engineering and Wu Prize. His work has been featured in the press, including the New York Times, BBC, and Wired.</p>
-            </div> -->
-        </div>
-        
-      </div>
+      </section>
 
-      <div id="filters" class="button-group">
-        <!-- <button class="button" data-filter="*">Show All</button> -->
-        <!-- <button class="button is-checked" data-filter=".highlight">Highlights</button> -->
-        <button class="button is-checked" data-filter=".publication">Publications</button>
-        <button class="button" data-filter=".misc">Work</button>
-        <button class="button" data-filter=".talk">Talks</button>
-        <button class="button" data-filter=".community">More</button>
-        
-      </div>
+      <!-- ===================== PUBLICATIONS ===================== -->
+      <section id="view-publications" class="view">
+        <h2 class="section-title">Publications</h2>
 
-      <div class="grid">
-
-        <!-- Publications -->
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://crossformer-model.github.io/" class="thumbnail">
             <video playsinline muted autoplay loop>
               <source src="images/crossformer_teaser.mp4" type="video/mp4">
@@ -105,7 +120,7 @@
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://shadow-cross-embodiment.github.io/" class="thumbnail">
             <img src="images/shadow_teaser.png" alt="Shadow teaser">
           </a>
@@ -114,18 +129,17 @@
             </a></h3>
             <p>
               Marion Lepert,
-              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              <b style="color:black; font-weight:400">Ria Doshi</b>,
               Jeannette Bohg
               <br>
               <i>Conference on Robot Learning (CoRL) 2024</i><br>
               <a href="https://shadow-cross-embodiment.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
               <a href="https://shadow-cross-embodiment.github.io/static/shadow24.pdf">PDF</a>
-              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
             </p>
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://sites.google.com/view/dexterous-avail/" class="thumbnail">
             <video playsinline muted autoplay loop>
               <source src="images/avail_teaser.mp4" type="video/mp4">
@@ -136,19 +150,17 @@
             </a></h3>
             <p>
               Kelvin Xu*, Zheyuan Hu*,
-              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              <b style="color:black; font-weight:400">Ria Doshi</b>,
               Aaron Rovinsky, Abhishek Gupta, Vikash Kumar, Sergey Levine
               <br>
               <i>International Conference on Robotics & Automation (ICRA) 2022</i><br>
               <a href="https://sites.google.com/view/dexterous-avail/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
               <a href="https://arxiv.org/abs/2212.09902">PDF</a>
-              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
             </p>
           </div>
         </div>
 
-
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://arxiv.org/pdf/2407.19346" class="thumbnail">
             <img src="images/polyground_teaser.png" alt="PolyGround teaser">
           </a>
@@ -160,12 +172,11 @@
               <i>International Conference on Machine Learning (ICML) Workshop 2024</i><br>
               <a href="https://riadoshi.github.io/polyground/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
               <a href="https://arxiv.org/pdf/2407.19346">PDF</a>
-              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
             </p>
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://octo-models.github.io/" class="thumbnail">
             <img src="images/octo.gif" alt="Octo teaser">
           </a>
@@ -174,7 +185,7 @@
             </a></h3>
             <p>
               Dibya Ghosh*, Homer Walke*, Karl Pertsch*, Kevin Black*, Oier Mees*, Sudeep Dasari, Joey Hejna, Tobias Kreiman,
-              <b style="color:black; font-weight:400">Ria Doshi</b>, 
+              <b style="color:black; font-weight:400">Ria Doshi</b>,
               Charles Xu, Jianlan Luo, You Liang Tan, Lawrence Yunliang Chen, Pannag Sanketi, Quan Vuong, Ted Xiao, Dorsa Sadigh, Chelsea Finn, Sergey Levine
               <br>
               <i>Robotics, Sciences & Systems (RSS) 2024</i><br>
@@ -183,9 +194,8 @@
             </p>
           </div>
         </div>
-        
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication">
           <a href="https://robotics-transformer-x.github.io/" class="thumbnail">
             <img src="images/rtx_thumbnail.gif" alt="Open X-Embodiment teaser">
           </a>
@@ -193,26 +203,27 @@
             <h3><a href="https://robotics-transformer-x.github.io/">Open X-Embodiment: Robotic Learning Datasets and RT-X Models
             </a></h3>
             <p>
-              Open X Embodiment Collaboration et. al. 
+              Open X Embodiment Collaboration et. al.
               <br>
               <i>International Conference on Robotics & Automation (ICRA) 2023</i><br>
               <a href="https://robotics-transformer-x.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
               <a href="https://robotics-transformer-x.github.io/paper.pdf">PDF</a>
-              <!-- <a href="https://github.com/rail-berkeley/crossformer">Code</a> -->
             </p>
           </div>
         </div>
+      </section>
 
-        <!--Work-->
-        <div class="list-item misc" data-category="misc">
+      <!-- ===================== WORK ===================== -->
+      <section id="view-work" class="view">
+        <h2 class="section-title">Work</h2>
+
+        <div class="list-item misc">
           <a href="https://wayve.ai" class="thumbnail">
-            <img src="images/wayve.jpg" type="png" style="width:130px">
+            <img src="images/wayve.jpg" alt="Wayve AI">
           </a>
-
           <div class="project-description">
             <h3><a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">ML Research Intern, Wayve AI
             </a></h3>
-            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
             <p>
               My work focused on building LINGO, towards a vision-language-action model for autonomous driving. I was involved with building a large-scale inference pipeline using Kubernetes, improving road-signal perception capabilities, and data curation for referential segmentation.<br>
                 <a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">Project Webpage</a>
@@ -220,215 +231,140 @@
           </div>
         </div>
 
-        <div class="list-item misc" data-category="misc">
+        <div class="list-item misc">
           <a class="thumbnail">
-            <img src="images/spyne.jpg" type="png" style="width:100px">
+            <img src="images/spyne.jpg" alt="Spyne AI">
           </a>
-
           <div class="project-description">
             <h3><a href="https://wayve.ai/thinking/lingo-1-referential-segmentation/">ML Consultant, Spyne AI
             </a></h3>
-            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
             <p>
               I developed high-fidelity, 3D renderings of cars using NERF models for smarter, more efficient online marketing. Implemented interpolation & feature matching techniques for output consistency across varying input dimensions. <br>
             </p>
           </div>
         </div>
+      </section>
 
+      <!-- ===================== TALKS ===================== -->
+      <section id="view-talks" class="view">
+        <h2 class="section-title">Talks</h2>
 
-        <!--Work-->
-        <div class="list-item community" data-category="community">
-          <div style="display: -ms-inline-flexbox">
-            <a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819" class="thumbnail">
-              <img src="images/books.png" type="png" style="width:170px">
-            </a>
+        <div class="list-item talk">
+          <span class="date">2024</span>
+          <div class="talk-content">
+            <h3>Oral presentation — Scaling Cross-Embodied Learning</h3>
+            <p class="talk-venue">Conference on Robot Learning (CoRL)</p>
+            <iframe width="445" height="250" src="https://www.youtube.com/embed/fVfnARH_BQI?start=5232&rel=0&modestbranding=1&iv_load_policy=3" title="CoRL 2024 Day 3 09:00-10:30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
+        </div>
 
+        <div class="list-item talk">
+          <span class="date">2024</span>
+          <div class="talk-content">
+            <h3>Invited talk</h3>
+            <p class="talk-venue">Google DeepMind</p>
+          </div>
+        </div>
+
+        <div class="list-item talk">
+          <span class="date">2024</span>
+          <div class="talk-content">
+            <h3>Invited talk</h3>
+            <p class="talk-venue"><a href="https://wayve.ai/">Wayve AI</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== BLOG ===================== -->
+      <section id="view-blog" class="view">
+        <h2 class="section-title">Blog</h2>
+
+        <article class="blog-post">
+          <h3 class="blog-title">The Path to a Healthcare System Supercharged by Robotics</h3>
+          <div class="blog-meta">
+            <span class="blog-date">April 26, 2026</span>
+            <a class="blog-x-link" href="https://x.com/riadoshi21/status/2048515363814662519"><i class="fab fa-x-twitter"></i> View on X</a>
+          </div>
+          <div class="blog-body">
+            <div class="notion-embed-wrap">
+              <iframe class="notion-embed" src="https://righteous-digit-e48.notion.site/ebd/34eaa2ce9e3380d1b9c0c2fbb1a2f25a" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===================== MORE ===================== -->
+      <section id="view-more" class="view">
+        <h2 class="section-title">More</h2>
+
+        <div class="list-item community">
+          <a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819" class="thumbnail">
+            <img src="images/books.png" alt="The Code Detectives book series">
+          </a>
           <div class="project-description">
             <h3><a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819">Author, The Code Detectives Book Series
             </a></h3>
-            <!-- <i style="color:grey">05/2023 - 10/2023</i><br> -->
             <p>
-              I've always loved reading mystery novels, especially when I was younger... so I decided to write two of my own :) The Code Detectives is about two friends who use coding & AI to solve neighborhood mysteries. Writing the books was an eye-opening and pretty cool experience.<br> 
+              I've always loved reading mystery novels, especially when I was younger... so I decided to write two of my own :) The Code Detectives is about two friends who use coding & AI to solve neighborhood mysteries. Writing the books was an eye-opening and pretty cool experience.<br>
                 <a href="https://www.amazon.com/Code-Detectives-Crisis/dp/1695044819">Book 1</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                 <a href="https://www.amazon.com/Code-Detectives-Student-Council-Sabotage/dp/B08H6NPW6Z">Book 2</a>
             </p>
-
           </div>
         </div>
 
-        <div class="list-item community" data-category="community" style="margin-top: 2em;">
-          <p style="color: #6b7280; font-size: 1em; margin: 0; padding: 0;">I also love basketball and am a fan of the Golden State Warriors. 2025-2026 is our year...</p>
-        </div>
+        <p class="more-note">I also love basketball and frequently cheer on the Golden State Warriors!</p>
+      </section>
 
-        
-
-        <!-- Talks -->
-        <!-- <div class="list-item talk description" data-category="talk">
-          Some of my slides can be found <a href="https://slides.com/andyzeng">here</a>
-        </div> -->
-
-        <div class="list-item talk talk-intro" data-category="talk">
-        </div>
-
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2024</p>
-          <h3>Oral presentation — Scaling Cross-Embodied Learning</h3>
-          <p class="talk-venue">Conference on Robot Learning (CoRL)</p>
-          <iframe width="445" height="250" src="https://www.youtube.com/embed/fVfnARH_BQI?start=5298" title="CoRL 2024 Day 3 09:00-10:30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2024</p>
-          <h3>Invited talk</h3>
-          <p class="talk-venue">Google DeepMind</p>
-        </div>
-
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2024</p>
-          <h3>Invited talk</h3>
-          <p class="talk-venue"><a href="https://wayve.ai/">Wayve AI</a></p>
-        </div>
-
-        
-
-      
-
-        <!-- Services -->
-        <!-- <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Member, IEEE
-        </div> -->
-
-      </div>
-
-      <div id="footer">Inspired by <a href="https://andyzeng.github.io/" target="_blank" rel="noopener noreferrer">Andy Zeng's</a> website.</div>
     </div>
 
     <script>
+      // Open external links in a new tab, but keep in-page nav (#hash) links internal.
       document.querySelectorAll('a[href]').forEach(function(a) {
+        var href = a.getAttribute('href');
+        if (href && href.charAt(0) === '#') return;
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
       });
 
-      // Isotope grid.
-      var $grid = $('.grid').isotope({
-        itemSelector: '.list-item',
-        layoutMode: 'fitRows',
-        transitionDuration: 0,
-        stagger: 10,
-        initLayout: false,
-        getSortData: {
-          name: '.name',
-          symbol: '.symbol',
-          number: '.number parseInt',
-          category: '[data-category]',
-          weight: function( itemElem ) {
-            var weight = $( itemElem ).find('.weight').text();
-            return parseFloat( weight.replace( /[\(\)]/g, '') );
-          }
-        }
-      });
+      var SECTIONS = ['home', 'publications', 'work', 'talks', 'blog', 'more'];
 
-      // Set default filter to "Research" on page load
-      $(document).ready(function() {
-          var defaultFilterValue = ".publication"; // Set to the class for Research
-          $grid.isotope({ filter: defaultFilterValue });
-          $('.button-group .button').removeClass('is-checked');
-    
-          // Select only the Research button
-          $('.button-group .button[data-filter="' + defaultFilterValue + '"]').addClass('is-checked');      });
+      // Remember the talk video's original embed URL (it includes the forced
+      // start time) so we can restart it from there each time Talks is opened.
+      var talkIframe = document.querySelector('#view-talks iframe[src*="youtube.com"]');
+      var talkBaseSrc = talkIframe ? talkIframe.getAttribute('src') : null;
 
-      // Bind filter button click.
-      $('#filters').on( 'click', 'button', function() {
-        var filterValue = $( this ).attr('data-filter');
-        localStorage.setItem('filterValue', filterValue);
-        $grid.isotope({ filter: filterValue });
-        
-        // Show the grid if it's hidden
-        if (!$('.grid').hasClass('show')) {
-          $('.grid').addClass('show');
-        }
-      });
+      function route() {
+        var hash = (location.hash || '').replace('#', '');
+        if (SECTIONS.indexOf(hash) === -1) hash = 'home';
 
-      // Change is-checked class on buttons.
-      $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'button', function() {
-          $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
+        SECTIONS.forEach(function(s) {
+          var el = document.getElementById('view-' + s);
+          if (el) el.classList.toggle('active', s === hash);
         });
-      });
 
-      function update_isotope() {
-        // Retrieve cached button click.
-        var defaultFilterValue = localStorage.getItem('filterValue');
-        if (defaultFilterValue == null) {
-          defaultFilterValue = ".publication"
-        }
-        $grid.isotope({ filter: defaultFilterValue });
-        var buttons = document.getElementsByClassName("button");
-        for (var currButton of buttons) {
-          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-            currButton.classList.add('is-checked');
-          } else {
-            currButton.classList.remove('is-checked');
+        document.body.classList.toggle('is-home', hash === 'home');
+
+        document.querySelectorAll('.nav-links a').forEach(function(a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + hash);
+        });
+
+        window.scrollTo(0, 0);
+
+        // Restart the talk video from its forced start time when Talks opens,
+        // and stop it (reload without autoplay) when navigating away.
+        if (talkIframe && talkBaseSrc) {
+          if (hash === 'talks') {
+            var sep = talkBaseSrc.indexOf('?') === -1 ? '?' : '&';
+            talkIframe.src = talkBaseSrc + sep + 'autoplay=1';
+          } else if (talkIframe.src !== talkBaseSrc) {
+            talkIframe.src = talkBaseSrc;
           }
         }
-        
-        // Show publications by default
-        $('.grid').addClass('show');
       }
 
-      window.addEventListener('load', function() {
-        if (window.location.hash === '#talks') {
-            // Switch to talks tab
-            var filterValue = '.talk';
-            $grid.isotope({ filter: filterValue });
-            $('.button-group .button').removeClass('is-checked');
-            $('.button-group .button[data-filter="' + filterValue + '"]').addClass('is-checked');
-            
-            // Find and play YouTube video if it exists
-            setTimeout(function() {
-                var videoIframe = document.querySelector('iframe[src*="youtube.com"]');
-                if (videoIframe) {
-                    var currentSrc = videoIframe.src;
-                    // Add both autoplay and mute parameters
-                    if (!currentSrc.includes('autoplay=1')) {
-                        videoIframe.src = currentSrc + '&autoplay=1&mute=1';
-                    }
-                }
-            }, 1000);
-        }
-      });
-
-      function toggle_bio() {
-        var x = document.getElementById("more-bio");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-
-      function toggle_highlights() {
-        var x = document.getElementById("main-highlights");
-        var y = document.getElementById("more-highlights");
-        var b = document.getElementById("toggle_highlights_button")
-        if (y.style.display === "none") {
-          x.style.display = "none";
-          y.style.display = "block";
-          b.innerHTML = "Show less"
-          update_isotope();
-        } else {
-          x.style.display = "block";
-          y.style.display = "none";
-          b.innerHTML = "Show more"
-          update_isotope();
-        }
-      }
-
-      update_isotope();
-
+      window.addEventListener('hashchange', route);
+      window.addEventListener('load', route);
+      route();
     </script>
   </body>
 </html>

@@ -28,11 +28,23 @@ footer, header, hgroup, menu, nav, section {
 
 /**************************************************/
 
-/* Add very subtle beige background to body */
+/* ---- Theme tokens: berry on white ---- */
+:root {
+  --bg: #ffffff;          /* clean white */
+  --surface: #ffffff;
+  --ink: #1f1d1c;         /* near-black (body text) */
+  --muted: #6b6b6b;       /* neutral gray (secondary text) */
+  --line: #ebebeb;        /* light neutral hairline borders */
+  --accent: #a8136a;      /* magenta */
+  --accent-dark: #850f54; /* deeper magenta (hover/active) */
+  --accent-soft: rgba(168, 19, 106, 0.10);
+}
+
+/* Add very subtle warm background to body */
 body {
   line-height: 1;
   overflow-x: hidden;
-  background-color: #fefdfb; /* Very subtle beige background */
+  background-color: var(--bg);
 }
 
 ol, ul {
@@ -52,12 +64,14 @@ table {
 }
 
 #body{
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1em; /* Increased back to 1em from 0.9em */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.02em;
   line-height: 1.5em;
-  color: #1a1a1a; /* Dark black for main text */
-  font-weight:300;
-  background-color: #fefdfb; /* Very subtle beige background */
+  color: var(--ink);
+  font-weight: 400;
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #main {
@@ -68,24 +82,24 @@ table {
   padding: 0 2em; */
 
   width: 100%; /* Use full width */
-  max-width: 59em; /* Set a maximum width */
+  max-width: 49em; /* Tighter column: fills the space, easy to read across */
   margin: 0 auto; /* Center the main content */
   position: relative;
   min-height: 100vh;
   padding: 0 2em; /* Add horizontal padding */
-  background-color: #fefdfb; /* Very subtle beige background */
+  background-color: var(--bg);
 }
 
 a {
   text-decoration: none;
-  color: #3a9aaa; /* Slightly darker teal-blue for links */
-  transition: color 0.3s ease;
+  color: var(--accent);
+  transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 a:hover {
   text-decoration: none;
-  border-bottom: 1px solid #3a9aaa;
-  color: #2d7a85; /* Even darker teal on hover */
+  border-bottom: 1px solid var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 i {
@@ -93,15 +107,17 @@ i {
 }
 
 b {
-  font-weight: 500;
-  color: #1a1a1a; /* Ensure bold text is black */
+  font-weight: 600;
+  color: var(--ink); /* Ensure bold text is dark ink */
 }
 
 h1 {
-  font-size: 2.5em; /* Slightly increased from 2.4em */
-  line-height: 1.7em; /* Slightly increased from 1.6em */
-  font-weight: 600;
-  color: #1a1a1a; /* Black for main heading */
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 2.8em;
+  line-height: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--ink);
 }
 
 .intro-header {
@@ -113,36 +129,210 @@ h1 {
 }
 
 .intro-subtitle {
-  font-size: 1.05em;
-  color: #6b7280;
-  margin: -0.35em 0 0;
-  font-weight: 400;
+  font-size: 1.02em;
+  color: var(--accent);
+  margin: 0.5em 0 0;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 
 .intro-socials {
   display: flex;
   flex-shrink: 0;
-  gap: 0.9em;
+  gap: 0.6em;
   margin-top: 0.15em;
 }
 
+/* Cute round icon badges */
 .intro-socials a {
-  color: #6b7280;
-  font-size: 1.15em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.95em;
   line-height: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .intro-socials a:hover {
-  color: #3a9aaa;
+  background: var(--accent);
+  color: #fff;
   border-bottom: none;
+  transform: translateY(-2px);
 }
 
 .intro-bio > p {
-  margin-bottom: 0.85em;
+  margin-bottom: 1.05em;
+}
+
+/* Bold the colored (accent) links in the bio */
+.intro-bio a {
+  font-weight: 600;
 }
 
 .intro-bio > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Featured "pins" row on the home page */
+.pins {
+  display: flex;
+  gap: 1.05em;
+  flex-wrap: wrap;
+}
+
+.pin {
+  flex: 1 1 13em;
+  min-width: 13em;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.9em 1em;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+  color: var(--ink);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pin:hover {
+  border-color: var(--accent);
+  border-bottom-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(168, 19, 106, 0.10);
+  transform: translateY(-3px);
+}
+
+.pin-label {
+  display: block;
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.pin-label i {
+  margin-right: 0.35em;
+}
+
+.pin-title {
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.pin-meta {
+  display: block;
+  margin-top: 0.35em;
+  font-size: 0.75em;
+  color: var(--muted);
+}
+
+.pin-date {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Casual note at the bottom of the More section */
+.more-note {
+  margin-top: 1.8em;
+  color: var(--muted);
+  font-size: 0.98em;
+  line-height: 1.6em;
+}
+
+/* Subpages use the native Apple system font for content
+   (item titles, descriptions, etc.). Section headers keep Philosopher. */
+#view-publications,
+#view-work,
+#view-talks,
+#view-blog,
+#view-more {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Blog post */
+.blog-post {
+  max-width: 42em;
+  margin: 0 auto;
+}
+
+/* Let the embed break out wider than the narrow reading column,
+   centered on the viewport (relies on .blog-post being centered). */
+.notion-embed-wrap {
+  position: relative;
+  width: 90vw;
+  max-width: 1100px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 4em;
+}
+
+.notion-embed {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.blog-title {
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 1.55em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.4em;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85em;
+  margin-bottom: 1.6em;
+}
+
+.blog-date {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+/* Subtle outlined pill, inline next to the date */
+.blog-x-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3em 0.75em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.8em;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.blog-x-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-bottom: 1px solid var(--accent);
+}
+
+.blog-body p {
+  margin-bottom: 1.15em;
+  line-height: 1.8em;
+  color: var(--ink);
+}
+
+.blog-body p:last-child {
   margin-bottom: 0;
 }
 
@@ -150,11 +340,11 @@ h1 {
 /* Profile image and description. */
 
 #intro {
-  padding-top: 3.25em;
+  padding-top: 2.5em;
   padding-bottom: 1.75em;
   display: flex;
   flex-direction: column;
-  gap: 1.25em;
+  gap: 1.9em;
 }
 
 .intro-top {
@@ -170,9 +360,9 @@ h1 {
 
 .intro-bio {
   width: 100%;
-  font-size: 1em;
-  color: #374151;
-  line-height: 1.5em;
+  font-size: 0.95em;
+  color: var(--ink);
+  line-height: 1.7em; /* Generous line spacing for easy reading */
 }
 
 #intro-image {
@@ -188,90 +378,114 @@ h1 {
 }
 
 /**************************************************/
-/* Section buttons. */
+/* Top navigation bar. */
 
-#menu {
+#topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
-  /* font-family:"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif"; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
-.menu-item {
-  float: left;
-  margin-right: 2em;
-  
+.nav-name {
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-h2 {
-  font-size: 1.4em; /* Increased from 1.3em */
-  line-height: 2.4em;
-  margin-top: 0.5em;
-  color: #6b7280; /* Medium gray for inactive headings */
+.nav-name:hover {
+  color: var(--accent);
+  border-bottom: none;
 }
 
-.selected h2 {
-  color: #1a1a1a; /* Black for selected headings */
+/* On the home view the big name in the intro already shows, so hide the
+   duplicate in the bar (keep its space so the links stay right-aligned). */
+body.is-home .nav-name {
+  visibility: hidden;
 }
 
-/* Position buttons right under intro */
-#filters {
-  text-align: left;
-  padding: 0.75em 0 0.8em;
-  margin-top: 0.85em;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 2.5em;
+.nav-links {
+  display: flex;
+  gap: 1.7em;
 }
 
-.button {
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: #6b7280; /* Medium gray for inactive buttons */
-  font-size: 1.22em;
-  line-height: 1.35;
-  margin: 0 1.1em 0 0;
-  float: none; /* Remove float for centered layout */
-  padding: 0 0 0.2em;
-  font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  transition: color 0.2s ease;
-}
-
-.button:hover {
-  color: #3a9aaa; /* Darker teal-blue on hover */
-}
-
-.button:active,
-.button.is-checked {
-  color: #1a1a1a; /* Black for active/checked buttons */
+.nav-links a {
+  color: var(--muted);
+  font-size: 1.05em;
   font-weight: 500;
-  box-shadow: inset 0 -2px 0 #3a9aaa;
+  padding-bottom: 0.18em;
 }
 
-.button-group:after {
-  content: '';
-  display: block;
-  clear: both;
+.nav-links a:hover {
+  color: var(--accent);
+  border-bottom: none;
+}
+
+.nav-links a.active {
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 /**************************************************/
-/* Isotope grid list of items. */
+/* Page views (one section visible at a time). */
 
-/* Hide content initially */
-.grid {
-  padding-bottom: 0.5em;
-  display: none; /* Hidden by default */
+.view {
+  display: none;
 }
 
-.grid.show {
+.view.active {
   display: block;
-  animation: fadeInUp 0.5s ease-out;
+  animation: fadeInUp 0.45s ease-out;
+}
+
+/* Home: center the intro vertically so the page feels balanced
+   instead of leaving a block of empty space at the bottom. */
+#view-home.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 7.5em);
+  max-width: 45em; /* keep the home page narrower than the subpages */
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin: 1.7em 0 1.6em;
+  position: relative;
+  padding-bottom: 0.35em;
+}
+
+/* Short coral underline accent beneath each section heading */
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.2em;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--accent);
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -279,16 +493,9 @@ h2 {
   }
 }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .description {
   margin-bottom: 1em;
-  color: #374151; /* Dark gray for descriptions */
+  color: var(--ink);
 }
 
 .list-item {
@@ -298,25 +505,27 @@ h2 {
   transition: transform 0.2s ease;
 }
 
-.list-item.publication {
+.list-item.publication,
+.list-item.misc,
+.list-item.community {
   display: flex;
   align-items: flex-start;
-  gap: 2%;
-  margin-bottom: 1.5em;
+  gap: 6%;
+  margin-bottom: 2.1em;
 }
 
-.list-item.publication:has(+ .list-item.misc) {
-  margin-bottom: 0;
-}
-
-.list-item.publication .thumbnail {
+.list-item.publication .thumbnail,
+.list-item.misc .thumbnail,
+.list-item.community .thumbnail {
   float: none;
   flex: 0 0 18%;
   width: 18%;
   margin-right: 0;
 }
 
-.list-item.publication .project-description {
+.list-item.publication .project-description,
+.list-item.misc .project-description,
+.list-item.community .project-description {
   float: none;
   flex: 1;
   width: auto;
@@ -329,52 +538,79 @@ h2 {
   object-fit: cover;
 }
 
-.list-item.publication .project-description h3 {
+/* Work logos: equal size, clean (no border) */
+.list-item.misc .thumbnail img {
+  width: 100%;
+  max-width: 92px;
+  height: auto;
+  border: none;
+  border-radius: 8px;
+}
+
+.list-item.publication .project-description h3,
+.list-item.misc .project-description h3,
+.list-item.community .project-description h3 {
   margin-top: 0;
 }
 
-.list-item.publication .project-description p {
+.list-item.publication .project-description p,
+.list-item.misc .project-description p,
+.list-item.community .project-description p {
   margin-top: 0.4em;
   margin-bottom: 0;
 }
 
-.list-item:hover {
+.list-item.publication:hover,
+.list-item.misc:hover,
+.list-item.community:hover {
   transform: translateX(5px); /* Subtle slide on hover */
 }
 
-.list-item p.date {
+/* Talks shouldn't slide — it's distracting while hovering the video. */
+.list-item.talk:hover {
+  transform: none;
+}
+
+.list-item .date {
   display: inline-block;
-  width: 3em;
-  color: #3a9aaa; /* Darker teal-blue for dates */
-  font-weight: 500;
-  background: rgba(58, 154, 170, 0.1); /* Updated background with darker color */
-  padding: 2px 6px;
+  flex: 0 0 auto;
+  margin-top: 0.15em;
+  color: var(--accent-dark);
+  font-weight: 600;
+  background: var(--accent-soft);
+  padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.9em;
 }
 
+/* Talks: date column + content column so venue/video align under the title */
+.list-item.talk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9em;
+  margin-bottom: 2.1em;
+}
+
+.list-item.talk .talk-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .list-item.talk h3 {
-  display: inline-block;
-  width: calc(100% - 4.5em);
-  vertical-align: top;
   margin: 0;
   font-weight: 500;
 }
 
 .list-item.talk .talk-venue {
-  margin: 0.2em 0 0.6em 3.6em;
-  color: #6b7280;
+  margin: 0.25em 0 0;
+  color: var(--muted);
   font-size: 0.95em;
   line-height: 1.5em;
 }
 
-.list-item.talk.talk-intro p {
-  color: #6b7280;
-  line-height: 1.55em;
-}
-
 .list-item.talk iframe {
-  margin: 0.5em 0 0 3.6em;
+  margin: 0.7em 0 0;
+  border-radius: 8px;
 }
 
 /**************************************************/
@@ -390,7 +626,7 @@ h2 {
 
 .previews video {
   border-radius: 5px;
-  border: 2px solid #e5e7eb; /* Light gray border */
+  border: 2px solid var(--line);
 }
 
 .previews a:hover {
@@ -418,11 +654,11 @@ h2 {
 }
 
 .toggle-button a {
-  color: #6b7280; /* Medium gray for toggle buttons */
+  color: var(--muted);
 }
 
 .toggle-button a:hover {
-  color: #3a9aaa; /* Darker teal-blue on hover */
+  color: var(--accent);
 }
 
 /**************************************************/
@@ -444,39 +680,40 @@ h2 {
 .thumbnail img,
 .thumbnail video {
   display: block;
-  border-radius: 5px;
+  border-radius: 6px;
   width: 100%;
   height: auto;
-  border: 1px solid #e5e7eb; /* Light gray border */
+  border: 1px solid var(--line);
   transition: box-shadow 0.3s ease;
 }
 
 .thumbnail:hover img {
-  box-shadow: 0 4px 12px rgba(58, 154, 170, 0.15); /* Updated shadow with darker color */
+  box-shadow: 0 6px 16px rgba(168, 19, 106, 0.18);
 }
 
 .thumbnail:hover video {
-  box-shadow: 0 4px 12px rgba(58, 154, 170, 0.15); /* Updated shadow with darker color */
+  box-shadow: 0 6px 16px rgba(168, 19, 106, 0.18);
 }
 
 h3 {
-  font-size:1.15em; /* Increased from 1.1em */
-  line-height: 1.5em;
-  font-weight: 400;
+  font-size:1.18em;
+  line-height: 1.45em;
+  font-weight: 600;
 }
 
 h3 a {
-  color: #1a1a1a; /* Black for publication titles */
+  color: var(--ink);
 }
 
 h3 a:hover {
-  color: #3a9aaa; /* Darker teal-blue on hover */
+  color: var(--accent);
+  border-bottom: none;
 }
 
 .publication p {
-  font-size: 0.95em; /* Increased from 0.9em */
-  line-height: 1.5em;
-  color: #6b7280; /* Medium gray for publication details */
+  font-size: 0.95em;
+  line-height: 1.55em;
+  color: var(--muted);
 }
 
 .misc {
@@ -485,9 +722,9 @@ h3 a:hover {
 }
 
 .misc p {
-  font-size: 0.95em; /* Increased from 0.9em */
-  line-height: 1.5em;
-  color: #6b7280; /* Medium gray for misc details */
+  font-size: 0.95em;
+  line-height: 1.55em;
+  color: var(--muted);
 }
 
 .community {
@@ -496,9 +733,9 @@ h3 a:hover {
 }
 
 .community p {
-  font-size: 0.95em; /* Increased from 0.9em */
-  line-height: 1.5em;
-  color: #6b7280; /* Medium gray for community details */
+  font-size: 0.95em;
+  line-height: 1.55em;
+  color: var(--muted);
 }
 
 .project-description {
@@ -510,19 +747,21 @@ h3 a:hover {
 /* Subtle footer at the bottom of the page. */
 
 #footer {
-  color: #6b7280;
+  color: var(--muted);
   text-align: left;
-  margin-top: 1.5em;
+  margin-top: 2em;
   padding: 1.5em 0 2.5em;
+  border-top: 1px solid var(--line);
   line-height: 1.5em;
+  font-size: 0.9em;
 }
 
 #footer a {
-  color: #6b7280;
+  color: var(--muted);
 }
 
 #footer a:hover {
-  color: #3a9aaa;
+  color: var(--accent);
   border-bottom: none;
 }
 
