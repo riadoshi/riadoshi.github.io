@@ -372,6 +372,25 @@ h1 {
   font-style: italic;
 }
 
+.blog-body h4 {
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.8em 0 0.8em;
+}
+
+.blog-body ul {
+  list-style: disc;
+  padding-left: 1.4em;
+  margin: 0 0 1.4em;
+}
+
+.blog-body li {
+  line-height: 1.8em;
+  margin-bottom: 0.6em;
+}
+
 @media (max-width: 600px) {
   .blog-card {
     align-items: flex-start;
@@ -392,27 +411,6 @@ h1 {
 .blog-post {
   max-width: 42em;
   margin: 0 auto;
-}
-
-/* Let the embed break out wider than the narrow reading column,
-   centered on the viewport (relies on .blog-post being centered). */
-.notion-embed-wrap {
-  position: relative;
-  width: 90vw;
-  max-width: 1100px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 4em;
-}
-
-.notion-embed {
-  display: block;
-  width: 100%;
-  height: 85vh;
-  min-height: 600px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
 }
 
 .blog-title {
