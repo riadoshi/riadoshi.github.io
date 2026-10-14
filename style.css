@@ -368,6 +368,11 @@ h1 {
   font-weight: 600;
 }
 
+.blog-post[data-post="healthcare-and-robotics"] .blog-cover {
+  max-height: 240px;
+  object-fit: cover;
+}
+
 .blog-body em {
   font-style: italic;
 }
