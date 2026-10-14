@@ -385,6 +385,10 @@ h1 {
 }
 
 /* Blog post */
+.blog-post[hidden] {
+  display: none;
+}
+
 .blog-post {
   max-width: 42em;
   margin: 0 auto;
