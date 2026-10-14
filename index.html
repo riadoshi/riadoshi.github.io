@@ -311,7 +311,50 @@
       <section id="view-blog" class="view">
         <h2 class="section-title">Blog</h2>
 
-        <article class="blog-post">
+        <div id="blog-index" class="blog-index">
+          <a class="blog-card" href="#blog/an-alternative-to-p-doom">
+            <img src="images/blog_alternative_to_p_doom.png" alt="" width="1536" height="512" loading="lazy">
+            <div class="blog-card-copy">
+              <span class="blog-card-label">Latest post</span>
+              <h3>an alternative to ‘p(doom)’</h3>
+              <p>AI should feel a little less like doom, and a lot more like magic.</p>
+              <span class="blog-card-read">Read post <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="blog-card" href="#blog/healthcare-and-robotics">
+            <img src="images/blog_healthcare_robotics.png" alt="" loading="lazy">
+            <div class="blog-card-copy">
+              <time class="blog-card-label" datetime="2026-04-26">April 26, 2026</time>
+              <h3>The Path to a Healthcare System Supercharged by Robotics</h3>
+              <span class="blog-card-read">Read post <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+
+        <article class="blog-post" data-post="an-alternative-to-p-doom" hidden>
+          <a class="blog-back" href="#blog"><span aria-hidden="true">←</span> Back to all posts</a>
+          <h3 class="blog-title">an alternative to ‘p(doom)’</h3>
+          <img class="blog-cover" src="images/blog_alternative_to_p_doom.png" alt="Magic gloved hands conjuring a galaxy among stars and planets" width="1536" height="512" loading="lazy">
+          <div class="blog-body">
+            <p><strong>AI should feel a little less like doom, and a lot more like magic.</strong></p>
+            <p>i remember watching old mickey mouse cartoons as a kid and being mesmerized by, of all things, the magic hands! the ones that would scrub the dishes, tie the shoelaces, cook the dinner — all of the things that i absolutely hated to do — while mickey and his friends could have a grand old time exploring the world.</p>
+            <p>honestly, given all the doom and gloom on X these days, with models racing us to discoveries we've spent ages chasing, or p(doom) &gt; 10%, i feel like we’ve lost the plot. AI is supposed to feel like magic!! a golden-snitch-like thing that zips over with your coffee, a closet that hands you an outfit based on the weather … dishes that put themselves away, bookshelves that self-organize....</p>
+            <p>it’s easy to look at AI and feel that all the problems in the world are solved. RSI will arrive and then it’s all over. but there’s so much left to be done! so much to be explored! <strong>we know just a fraction about the world — not only of the cells that make up our own body, but also of the world that lies beyond us in space</strong> (read Carl Sagan’s <em>Cosmos</em> if you want to be convinced!). we've barely begun to explore the possibilities. forget robots folding laundry, let’s talk building rockets capable of exploring galaxies beyond our own. AI should push us to think bigger and escape the comfort zone of problems with which we're already familiar.</p>
+            <p>but even in the short-term, what could happen if we achieved superintelligence, and we achieved it properly?</p>
+            <p>there are the big things: speeding up discoveries for cures to rare diseases, robot care enabling the elderly to live more independently, education accessible to every child.</p>
+            <p>and then there are the little moments, ones where we can already feel the magic:</p>
+            <p>for me, it's been taking a late-night Waymo, blasting music with my friends, instead of double-checking the license plate of an Uber and sharing my location with family to feel safe,</p>
+            <p>testing my research on robots in my own apartment, watching them bring a basket of clothes to my room, the first time i really internalized robotics' potential,</p>
+            <p>and relentlessly pushing Claude to parse medical jargon and assess treatment options after a health scare with my mom earlier this year.</p>
+            <p><strong>leading the debate <em>solely</em>  with fear shortchanges us.</strong> let’s not forget the potential of it all. if we <em>can</em> properly deploy AI, if we <em>can</em> make it safe, if we <em>can</em> get robots to do all of the thousands of things we don’t want to do every day… i think our lives would get a lot better.</p>
+            <p>so sure, let’s pace the frontier, let’s be careful and cautious and wise. but let’s also not forget our north star, from mickey mouse hands to exploring new galaxies. instead of feeling the weight of the world, let’s start feeling a little lighter with possibility.</p>
+            <p><em>thanks to </em><a href="https://x.com/@arushixgupta"><em>@arushixgupta</em></a><em> for feedback on an earlier version of this post!</em></p>
+          </div>
+          <a class="blog-back blog-back-bottom" href="#blog"><span aria-hidden="true">←</span> Back to all posts</a>
+        </article>
+
+        <article class="blog-post" data-post="healthcare-and-robotics" hidden>
+          <a class="blog-back" href="#blog"><span aria-hidden="true">←</span> Back to all posts</a>
           <h3 class="blog-title">The Path to a Healthcare System Supercharged by Robotics</h3>
           <div class="blog-meta">
             <span class="blog-date">April 26, 2026</span>
@@ -319,7 +362,7 @@
           </div>
           <div class="blog-body">
             <div class="notion-embed-wrap">
-              <iframe class="notion-embed" src="https://righteous-digit-e48.notion.site/ebd/34eaa2ce9e3380d1b9c0c2fbb1a2f25a" frameborder="0" allowfullscreen loading="lazy"></iframe>
+              <iframe class="notion-embed" src="https://righteous-digit-e48.notion.site/ebd/34eaa2ce9e3380d1b9c0c2fbb1a2f25a" title="The Path to a Healthcare System Supercharged by Robotics" frameborder="0" allowfullscreen loading="lazy"></iframe>
             </div>
           </div>
         </article>
@@ -367,7 +410,20 @@
 
       function route() {
         var hash = (location.hash || '').replace('#', '');
+        var postSlug = hash.indexOf('blog/') === 0 ? hash.slice(5) : null;
+        if (postSlug !== null) hash = 'blog';
         if (SECTIONS.indexOf(hash) === -1) hash = 'home';
+
+        var selectedPost = null;
+        document.querySelectorAll('#view-blog [data-post]').forEach(function(post) {
+          var selected = hash === 'blog' && post.getAttribute('data-post') === postSlug;
+          post.hidden = !selected;
+          if (selected) selectedPost = post;
+        });
+        document.getElementById('blog-index').hidden = !!selectedPost;
+        document.title = selectedPost
+          ? selectedPost.querySelector('.blog-title').textContent + ' · Ria Doshi'
+          : hash === 'blog' ? 'Blog · Ria Doshi' : 'Ria Doshi';
 
         SECTIONS.forEach(function(s) {
           var el = document.getElementById('view-' + s);

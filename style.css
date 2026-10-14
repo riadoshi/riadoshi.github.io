@@ -283,6 +283,107 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Blog archive and reading views */
+.blog-index {
+  max-width: 42em;
+  margin: 0 auto 4em;
+}
+
+.blog-card {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+  padding: 1.6em 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.blog-card:first-child {
+  padding-top: 0;
+}
+
+.blog-card > img {
+  width: 10em;
+  height: 7em;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.blog-card-copy {
+  min-width: 0;
+}
+
+.blog-card-label {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.blog-card h3 {
+  font-family: "Philosopher", -apple-system, sans-serif;
+  font-size: 1.35em;
+  line-height: 1.35;
+  margin: 0.3em 0;
+}
+
+.blog-card p {
+  color: var(--muted);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.blog-card-read {
+  display: inline-block;
+  margin-top: 0.7em;
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+.blog-card:focus-visible,
+.blog-back:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+}
+
+.blog-back-bottom {
+  margin: 2em 0 4em;
+}
+
+.blog-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1.5em 0 2em;
+}
+
+.blog-body strong {
+  font-weight: 600;
+}
+
+.blog-body em {
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .blog-card {
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .blog-card > img {
+    width: 5em;
+    height: 5em;
+  }
+}
+
 /* Blog post */
 .blog-post {
   max-width: 42em;
@@ -878,4 +979,3 @@ h3 a:hover {
 }
 
 /* Remove the subtle accent from the intro section */
-
