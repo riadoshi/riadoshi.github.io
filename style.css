@@ -1090,8 +1090,8 @@ h3 a:hover {
   .pin {
     flex: none;
     min-width: 0;
-    width: 80%;
-    padding: 13px;
+    width: 100%;
+    padding: 16px;
   }
 
   .pin-media {
@@ -1190,10 +1190,6 @@ h3 a:hover {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-  }
-
-  .blog-index {
-    width: 80%;
   }
 
   .blog-card {
