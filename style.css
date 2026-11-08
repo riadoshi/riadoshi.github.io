@@ -1043,6 +1043,7 @@ h3 a:hover {
   #intro {
     padding: 28px 0 32px;
     gap: 24px;
+    text-align: center;
   }
 
   .intro-top {
@@ -1073,7 +1074,6 @@ h3 a:hover {
     line-height: 1.65;
   }
 
-  .intro-bio,
   .project-description,
   .blog-card-copy,
   .blog-body {
@@ -1083,14 +1083,15 @@ h3 a:hover {
 
   .pins {
     flex-direction: column;
+    align-items: center;
     gap: 16px;
   }
 
   .pin {
     flex: none;
     min-width: 0;
-    width: 100%;
-    padding: 16px;
+    width: 80%;
+    padding: 13px;
   }
 
   .pin-media {
@@ -1113,14 +1114,21 @@ h3 a:hover {
     font-size: 14px;
   }
 
-  .section-title {
-    text-align: center;
-    margin: 28px 0;
+  .view:not(#view-home) {
+    padding-top: 28px;
   }
 
-  .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
+  /* Keep section names available to screen readers without repeating the nav. */
+  .section-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
   }
 
   h3 {
@@ -1182,6 +1190,10 @@ h3 a:hover {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+
+  .blog-index {
+    width: 80%;
   }
 
   .blog-card {
