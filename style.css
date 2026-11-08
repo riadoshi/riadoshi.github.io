@@ -986,3 +986,235 @@ h3 a:hover {
 }
 
 /* Remove the subtle accent from the intro section */
+
+/* Touch-only mobile layout. Keep the existing desktop styles, including
+   narrow desktop windows, exactly as they are above. */
+@media (max-width: 900px) and (pointer: coarse) and (hover: none) {
+  #body {
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  #main {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    padding: 0 20px;
+  }
+
+  #topnav {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+  }
+
+  body.is-home .nav-name {
+    visibility: visible;
+  }
+
+  .nav-name,
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 4px;
+  }
+
+  .nav-links a {
+    box-sizing: border-box;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  #view-home.active {
+    min-height: 0;
+    justify-content: flex-start;
+  }
+
+  #intro {
+    padding: 28px 0 32px;
+    gap: 24px;
+  }
+
+  .intro-top {
+    gap: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .intro-subtitle {
+    font-size: 16px;
+  }
+
+  .intro-socials a {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .intro-bio,
+  .publication p,
+  .misc p,
+  .community p,
+  .blog-card p,
+  .more-note {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .intro-bio,
+  .project-description,
+  .blog-card-copy,
+  .blog-body {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .pins {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pin {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .pin-media {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .pin-title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .pin-label,
+  .pin-meta,
+  .blog-card-label,
+  .blog-card-read,
+  .blog-date,
+  .blog-back,
+  .blog-x-link {
+    font-size: 14px;
+  }
+
+  .section-title {
+    text-align: center;
+    margin: 28px 0;
+  }
+
+  .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .list-item.publication,
+  .list-item.misc,
+  .list-item.community,
+  .list-item.talk {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 32px;
+    line-height: 1.6;
+  }
+
+  .list-item.publication .thumbnail,
+  .list-item.misc .thumbnail,
+  .list-item.community .thumbnail {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+  }
+
+  .list-item.misc .thumbnail {
+    max-width: 92px;
+  }
+
+  .list-item.community .thumbnail {
+    max-width: 220px;
+  }
+
+  .list-item.publication .thumbnail img,
+  .list-item.publication .thumbnail video {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .list-item.publication .project-description,
+  .list-item.misc .project-description,
+  .list-item.community .project-description,
+  .list-item.talk .talk-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .list-item.talk {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .list-item.talk iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .blog-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .blog-card > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .blog-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .blog-back,
+  .blog-x-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  .pin:hover,
+  .thumbnail:hover,
+  .intro-socials a:hover,
+  .list-item.publication:hover,
+  .list-item.misc:hover,
+  .list-item.community:hover {
+    transform: none;
+  }
+}
